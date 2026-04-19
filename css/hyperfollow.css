@@ -1,0 +1,129 @@
+/* =========================================================
+   MUSIC PAGE
+   Stylized minimal Hyperfollow-style layout
+========================================================= */
+
+.music-page-main {
+  min-height: 100vh;
+}
+
+/* =========================================================
+   MAIN PORTAL
+========================================================= */
+
+.music-portal {
+  display: flex;
+  justify-content: center;
+}
+
+.music-portal-inner {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =========================================================
+   COVER
+========================================================= */
+
+.music-cover {
+  width: 100%;
+  max-width: 65%;
+  margin: 0 auto 28px;
+}
+
+.music-cover img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+}
+
+/* =========================================================
+   META
+========================================================= */
+
+.music-meta {
+  margin-bottom: 28px;
+}
+
+.music-title {
+    font-size: 10vw;
+  margin: 8px 0 8px;
+}
+
+.music-artist {
+  font-family: var(--font-header);
+  font-size: 1.5rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.text-desc{
+    font-family: var(--font-body);
+}
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.music-primary-action {
+  margin-bottom: 18px;
+}
+
+.music-primary-button {
+  display: inline-block;
+  min-width: 240px;
+}
+
+/* =========================================================
+   PLATFORM LINKS
+========================================================= */
+
+.platform-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.platform-link {
+  display: block;
+  padding: 14px 18px;
+  border-radius: 14px;
+
+  text-decoration: none;
+  color: var(--color-text);
+  font-family: var(--font-header);
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.platform-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* =========================================================
+   LARGER SCREENS
+========================================================= */
+
+@media (min-width: 700px) {
+  .music-cover {
+    max-width: 50%;
+  }
+
+  .music-portal-inner {
+    max-width: 560px;
+  }
+
+  .music-title {
+    font-size: 3rem;
+    margin: 8px 0 8px;
+  }
+}
