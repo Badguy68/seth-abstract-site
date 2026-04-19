@@ -1,0 +1,198 @@
+:root {
+
+  /* ---------- COLORS ---------- */
+
+  /* Core Backgrounds */
+  --color-bg: #3a1f35;        /* Main dark background */
+  --color-surface: #7a4a5a;   /* Secondary surface (cards, sections) */
+  --color-text: #f2e9e4;      /* Primary light text */
+
+  /* Accent Colors (use sparingly) */
+  --color-accent-red: #ff5e5b;
+  --color-accent-blue: #4cc9f0;
+  --color-accent-mint: #b8f2e6;
+  --color-accent-gold: #ffd166;
+
+  /* Utility */
+  --color-border: rgba(255, 255, 255, 0.1);
+
+
+  /* ---------- TYPOGRAPHY ---------- */
+
+  /* Base */
+  --font-body: 'Inter', sans-serif;
+
+  /* Structure / Navigation */
+  --font-header: 'Manrope', sans-serif;
+
+  /* Display / Identity */
+  --font-display: 'ltr-beowolf-r21', serif;
+
+  /* Experimental / Accent */
+  --font-accent: 'alphabet-soup-pro', sans-serif;
+
+  /* Special / Expressive */
+  --font-special: 'glodok', sans-serif;
+
+
+  /* ---------- SPACING ---------- */
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 60px;
+
+
+  /* ---------- TRANSITIONS ---------- */
+
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.4s ease;
+
+}
+
+
+
+/* =========================================================
+   2. BASE RESET
+   Clean starting point across browsers
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================================
+   3. GLOBAL TYPOGRAPHY
+   Consistent text styles across site
+   ========================================================= */
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   4. UTILITY TEXT CLASSES
+   Easy overrides when needed
+   ========================================================= */
+
+.text-header {
+  font-family: var(--font-header);
+  letter-spacing: 1px;
+}
+
+.text-accent {
+  font-family: var(--font-accent);
+}
+
+.text-special {
+  font-family: var(--font-special);
+}
+
+.text-muted {
+  opacity: 0.6;
+}
+
+/* =========================================================
+   5. BUTTON SYSTEM
+   Reusable buttons across site
+   ========================================================= */
+
+.button {
+  font-family: var(--font-accent);
+  font-size: 1.3em;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Button Variants */
+.button-red {
+  background: var(--color-accent-red);
+  color: black;
+}
+
+.button-blue {
+  background: var(--color-accent-blue);
+  color: black;
+}
+
+.button-mint {
+  background: var(--color-accent-mint);
+  color: black;
+}
+
+.button-gold {
+  background: var(--color-accent-gold);
+  color: black;
+}
+
+/* =========================================================
+   6. IMAGE DEFAULTS
+   Keeps images clean and responsive
+   ========================================================= */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================================
+   7. SMALL INTERACTIONS
+   Subtle motion for polish
+   ========================================================= */
+
+.hover-scale {
+  transition: transform var(--transition-fast);
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}

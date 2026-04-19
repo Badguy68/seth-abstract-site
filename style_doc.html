@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.typekit.net/ugg8kvv.css">
+    
+    <title>Seth Abstract</title>
+</head>
+
+<style>
+
+/* =========================
+   COLOR SYSTEM
+========================= */
+:root {
+  --bg-dark: #3a1f35;
+  --clay: #7a4a5a;
+  --light: #f2e9e4;
+
+  --accent1: #ff5e5b;
+  --accent2: #4cc9f0;
+  --accent3: #b8f2e6;
+  --accent4: #ffd166;
+
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'ltr-beowolf-r21', serif;
+  --font-ui: 'alphabet-soup-pro', sans-serif;
+  --font-special: 'glodok', sans-serif;
+  --font-header: 'Manrope', sans-serif;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  margin: 0;
+  background: var(--bg-dark);
+  color: var(--light);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.section {
+  padding: 60px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  max-width: 900px;
+  margin: auto;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+.display {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.body-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.ui-text {
+  font-family: var(--font-ui);
+  letter-spacing: 1px;
+}
+
+.special-text {
+  font-family: var(--font-special);
+  font-size: 1.5rem;
+}
+
+.header-text{
+    font-family: var(--font-header);
+    font-size: 1.5rem;
+    
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.button-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+button {
+  font-family: var(--font-ui);
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn1 { background: var(--accent1); }
+.btn2 { background: var(--accent2); }
+.btn3 { background: var(--accent3); color:black; }
+.btn4 { background: var(--accent4); color:black; }
+
+/* =========================
+   COLOR PALETTE
+========================= */
+.palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.color-box {
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 12px;
+  padding: 6px;
+  transition: transform 0.2s;
+}
+
+.color-box:hover {
+  transform: scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO / DISPLAY -->
+<div class="section">
+  <div class="display">Seth Abstract</div>
+  <div class="body-text">
+    Experimental music built from poetry.  
+    A blend of sound, language, and digital expression.
+  </div>
+</div>
+
+<!-- BODY TEXT -->
+<div class="section">
+  <div class="header-text">BODY TEXT</div>
+  <p class="body-text">
+    This is your baseline readability layer. Everything else builds on top of this.
+    It should feel invisible, stable, and comfortable to read across all devices.
+  </p>
+</div>
+
+<!-- SPECIAL FONT -->
+<div class="section">
+  <div class="header-text">SPECIAL TEXT</div>
+  <p class="special-text">
+    This is where things get expressive, strange, and intentional.
+  </p>
+</div>
+
+<!-- BUTTONS -->
+<div class="section">
+  <div class="ui-text">BUTTONS / UI</div>
+
+  <div class="button-row">
+    <button class="btn1">Listen</button>
+    <button class="btn2">Explore</button>
+    <button class="btn3">Download</button>
+    <button class="btn4">Enter</button>
+  </div>
+</div>
+
+<!-- COLORS -->
+<div class="section">
+  <div class="ui-text">COLOR SYSTEM</div>
+
+  <div class="palette">
+    <div class="color-box" style="background:var(--bg-dark)">bg</div>
+    <div class="color-box" style="background:var(--clay)">clay</div>
+    <div class="color-box" style="background:var(--light); color:black">light</div>
+
+    <div class="color-box" style="background:var(--accent1)">accent 1</div>
+    <div class="color-box" style="background:var(--accent2)">accent 2</div>
+    <div class="color-box" style="background:var(--accent3); color:black">accent 3</div>
+    <div class="color-box" style="background:var(--accent4); color:black">accent 4</div>
+  </div>
+</div>
+
+</body>
+
+</html>

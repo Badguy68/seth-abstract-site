@@ -1,0 +1,168 @@
+/* =========================================================
+   1. PAGE WRAPPER
+   ========================================================= */
+
+main {
+  width: 100%;
+}
+
+/* =========================================================
+   2. SECTION SYSTEM
+   ========================================================= */
+
+/* Standard Section (Centered Content) */
+.section {
+  padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Full Width Section (Hero, Galleries, etc.) */
+.section-wide {
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+
+/* =========================================================
+   3. CONTAINER SYSTEM
+   Optional inner wrappers for layout control
+   ========================================================= */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.container-wide {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   4. FLEX UTILITIES
+   ========================================================= */
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-sm {
+  gap: var(--spacing-sm);
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+.gap-lg {
+  gap: var(--spacing-lg);
+}
+
+/* =========================================================
+   5. GRID UTILITIES
+   ========================================================= */
+
+.grid {
+  display: grid;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+/* =========================================================
+   6. NAVIGATION LAYOUT
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  padding: var(--spacing-md) var(--spacing-md);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+/* =========================================================
+   7. FOOTER LAYOUT
+   ========================================================= */
+
+.site-footer {
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+}
+
+/* =========================================================
+   8. RESPONSIVE DESIGN
+   Mobile-first approach
+   ========================================================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* Small Mobile */
+@media (max-width: 600px) {
+
+  .section {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .site-header {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
