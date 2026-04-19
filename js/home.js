@@ -1,3 +1,7 @@
+// git add .
+// git commit -m "message"
+// git push
+
 /* =========================================================
    HERO FONT ROTATION
    Purpose: Rotates the Seth Abstract display font
