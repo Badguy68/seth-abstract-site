@@ -1,0 +1,179 @@
+/* =========================================================
+   MEDIA PAGE
+========================================================= */
+
+.media-page-main {
+  flex: 1;
+}
+
+/* =========================================================
+   PAGE INTRO
+========================================================= */
+
+.media-intro-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.media-title {
+  margin: 8px 0 12px;
+}
+
+.media-tagline {
+  max-width: 620px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+/* =========================================================
+   FEATURE ROWS
+========================================================= */
+
+.media-features {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.media-feature-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.media-feature-image {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.media-feature-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.media-feature-text {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.media-feature-text h3 {
+  margin: 8px 0 12px;
+  font-size: 2rem;
+}
+
+.media-feature-text p:last-child {
+  opacity: 0.85;
+}
+
+
+/* =========================================================
+   DESKTOP LAYOUT FOR FEATURES
+========================================================= */
+
+@media (min-width: 900px) {
+  .media-feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .media-feature-row-reverse .media-feature-image {
+    order: 2;
+  }
+
+  .media-feature-row-reverse .media-feature-text {
+    order: 1;
+  }
+
+  .media-feature-image {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .media-feature-text {
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+
+/* =========================================================
+   DOWNLOADS SECTION
+========================================================= */
+.media-downloads-header {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.media-downloads-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.media-table {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.media-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 16px;
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.media-song {
+  font-family: var(--font-header);
+  font-size: 4vw;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.media-btn {
+  padding: 8px 8px;
+  border-radius: 10px;
+
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--color-text);
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.media-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+
+@media (min-width: 700px) {
+    .media-song {
+        font-size: 1.1rem;
+    }
+}
