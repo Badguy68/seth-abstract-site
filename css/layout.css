@@ -170,8 +170,35 @@ main {
    ========================================================= */
 
 .site-footer {
-  padding: var(--spacing-lg) var(--spacing-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+
+  padding: 32px 20px 16px;
+  margin-top: 40px;
+
+  background: linear-gradient(
+    to top,
+    rgba(122, 74, 90, 1) 0%,
+    rgba(58, 31, 53, 0) 100%
+  );
+
+  overflow: hidden;
+}
+
+.footer-text {
+  font-family: var(--font-header);
+  font-size: 1rem;
+  color: var(--color-text);
+  opacity: 0.8;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+  margin-top: 10px;
+}
 }
 
 /* =========================================================

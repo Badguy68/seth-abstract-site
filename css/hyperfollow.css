@@ -2,9 +2,14 @@
    MUSIC PAGE
    Stylized minimal Hyperfollow-style layout
 ========================================================= */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .music-page-main {
-  min-height: 100vh;
+  flex: 1;
 }
 
 /* =========================================================
@@ -66,19 +71,6 @@
 }
 
 /* =========================================================
-   PRIMARY BUTTON
-========================================================= */
-
-.music-primary-action {
-  margin-bottom: 18px;
-}
-
-.music-primary-button {
-  display: inline-block;
-  min-width: 240px;
-}
-
-/* =========================================================
    PLATFORM LINKS
 ========================================================= */
 
@@ -89,13 +81,16 @@
 }
 
 .platform-link {
-  display: block;
-  padding: 14px 18px;
+display: grid;
+grid-template-columns: 9vh 1fr 9vh;
+align-items: center;
+
+  height: 9vh;
+  /* padding: 14px 18px; */
   border-radius: 14px;
 
   text-decoration: none;
   color: var(--color-text);
-  font-family: var(--font-header);
 
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -107,6 +102,67 @@
   transform: translateY(-2px);
   opacity: 0.95;
   border-color: rgba(255, 255, 255, 0.18);
+}
+
+.platform-link:hover .platform-arrow {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+
+.platform-left {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+.platform-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.platform-name {
+  justify-self: center;
+  text-align: center;
+  flex: 1;
+  margin-left: 16px;
+  font-family: var(--font-accent);
+  font-size: 1.5rem;
+}
+
+.platform-arrow {
+  font-size: 1.2rem;
+  opacity: 0.7;
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* =========================================================
+   BOTTOM NOTE
+========================================================= */
+
+.platform-note {
+  margin: 0px auto;
+  padding: 0 6vw;
+
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.4;
+
+  opacity: 0.65;
+  text-align: center;
+
+  width: 100%;
+  max-width: 520px;
 }
 
 /* =========================================================
@@ -125,5 +181,9 @@
   .music-title {
     font-size: 3rem;
     margin: 8px 0 8px;
+  }
+
+  .platform-name {
+    font-size: 1.7rem;
   }
 }
