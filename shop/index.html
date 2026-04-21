@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Seth Abstract - Shop</title>
+
+  <!-- ========================= FONTS ========================= -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/ugg8kvv.css">
+
+  <!-- ========================= STYLES ========================= -->
+  <!-- Global Design System -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/layout.css">
+
+  <!-- Page-Specific Styles -->
+  <link rel="stylesheet" href="../css/shop.css">
+
+</head>
+
+<body>
+
+  <!-- ========================= NAVIGATION ========================= -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="/" class="nav-item active">Home</a>
+      <a href="/music" class="nav-item">Music</a>
+      <a href="/shop/" class="nav-item">Shop</a>
+      <a href="/media/" class="nav-item">Media</a>
+    </nav>
+  </header>
+
+  <!-- ========================= MAIN CONTENT ========================= -->
+  <main class="shop-page-main">
+
+  <!-- =========================
+       SHOP INTRO
+  ========================= -->
+  <section class="section shop-intro">
+    <div class="shop-intro-inner">
+      <p class="text-header">Postcard Shop</p>
+      <h1 class="shop-title">Collect physical pieces from the project</h1>
+      <p class="shop-tagline">
+        Buy individual postcards or collect multiple cards at once for a better price.
+        The more you collect, the more you save.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================
+       LIMITED OFFER BANNER
+  ========================= -->
+  <section class="section shop-offer">
+    <div class="shop-offer-banner">
+      First two weeks only: early orders get special launch perks. Orders ship once per week.
+    </div>
+  </section>
+
+  <!-- =========================
+       CATEGORY TABS
+  ========================= -->
+  <section class="section shop-tabs-section">
+    <div class="shop-tabs">
+      <button id="tab-album" class="shop-tab is-active album" type="button">Album Collection</button>
+      <button id="tab-art" class="shop-tab art" type="button">Art Prints</button>
+    </div>
+
+    <div class="shop-tab-description">
+      Postcards based on the songs and visual world of the album, plus a bundle option for collectors.
+    </div>
+  </section>
+
+  <!-- =========================
+       PRODUCT GRID
+  ========================= -->
+  <section class="section shop-products">
+    <div class="shop-grid" id="shop-grid">
+
+      <!-- Product 1 -->
+      <article class="shop-card" data-product-id="ozymandias">
+        <button class="shop-card-image-button" type="button" aria-label="Open Ozymandias artwork">
+          <img src="../home_assets/profile_pic_Art.png" alt="Ozymandias postcard artwork">
+        </button>
+
+        <div class="shop-card-body">
+          <h2 class="shop-card-title">Ozymandias</h2>
+
+          <div class="shop-card-controls">
+            <button class="qty-btn qty-minus" type="button" aria-label="Decrease quantity">−</button>
+
+            <button class="qty-display is-empty" type="button">
+              <span class="qty-display-text">Add</span>
+            </button>
+
+            <button class="qty-btn qty-plus" type="button" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="shop-card" data-product-id="she-walks-in-beauty">
+        <button class="shop-card-image-button" type="button" aria-label="Open She Walks in Beauty artwork">
+          <img src="../home_assets/profile_pic_Art.png" alt="She Walks in Beauty postcard artwork">
+        </button>
+
+        <div class="shop-card-body">
+          <h2 class="shop-card-title">Stopping by woods on a snowy evening</h2>
+
+          <div class="shop-card-controls">
+            <button class="qty-btn qty-minus" type="button" aria-label="Decrease quantity">−</button>
+
+            <button class="qty-display is-empty" type="button">
+              <span class="qty-display-text">Add</span>
+            </button>
+
+            <button class="qty-btn qty-plus" type="button" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="shop-card" data-product-id="album-bundle">
+        <button class="shop-card-image-button" type="button" aria-label="Open Album Bundle artwork">
+          <img src="../home_assets/profile_pic_Art.png" alt="Album bundle postcard artwork">
+        </button>
+
+        <div class="shop-card-body">
+          <h2 class="shop-card-title">Album Bundle + Secret Bonus Card</h2>
+
+          <div class="shop-card-controls">
+            <button class="qty-btn qty-minus" type="button" aria-label="Decrease quantity">−</button>
+
+            <button class="qty-display is-empty" type="button">
+              <span class="qty-display-text">Add</span>
+            </button>
+
+            <button class="qty-btn qty-plus" type="button" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       STICKY CART BAR
+  ========================= -->
+  <div class="shop-cart-bar">
+    <div class="shop-cart-summary">
+      <div id="shop-cart-count" class="shop-cart-count">0 items</div>
+      <div id="shop-cart-discount" class="shop-cart-discount">Discount: $0.00</div>
+      <div id="shop-cart-total"class="shop-cart-total">Total: $0.00</div>
+    </div>
+
+    <button class="shop-cart-checkout button button-red" type="button">
+      Checkout
+    </button>
+  </div>
+
+  <!-- =========================
+       IMAGE MODAL
+  ========================= -->
+  <div class="shop-modal" aria-hidden="true">
+    <div class="shop-modal-backdrop"></div>
+
+    <div class="shop-modal-content">
+      <button id="shop-modal-close" class="shop-modal-close" type="button" aria-label="Close artwork view">×</button>
+      <img id="shop-modal-image" class="shop-modal-image" src="" alt="">
+    </div>
+  </div>
+
+</main>
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="site-footer">
+    <p class="footer-text">A small signal left behind.</p>
+  </footer>
+
+  <!-- ========================= SCRIPTS ========================= -->
+  <script src="../js/global.js"></script>
+  <script src="./shopproducts.js"></script>
+  <script src="../js/shop.js"></script>
+
+</body>
+</html>
