@@ -119,6 +119,13 @@
   gap: 14px;
   max-width: 65%;
   margin: 0 auto;
+
+  transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+}
+
+.shop-card.is-selected .shop-card-image-button img {
+  box-shadow: 0 0 10px 10px var(--color-accent-red);
+  filter: brightness(1.06);
 }
 
 .shop-card-image-button {
@@ -143,8 +150,17 @@
 }
 
 .shop-card-title {
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   font-size: 1.5rem;
+}
+
+.shop-card-price {
+  font-family: var(--font-header);
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+
+  opacity: 0.85;
+  margin-bottom: 12px;
 }
 
 /* =========================================================
@@ -173,6 +189,10 @@
 
 .qty-btn {
   font-size: 1.4rem;
+}
+
+.shop-card.is-selected .qty-display-text {
+  font-size: 1.8rem;
 }
 
 .qty-display {
@@ -208,7 +228,8 @@
   padding: 14px 16px;
   border-radius: 18px;
 
-  background: var(--color-bg);
+  /* background: var(--color-bg); */
+  background: rgba(79, 41, 73);
   border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
   z-index: 200;
