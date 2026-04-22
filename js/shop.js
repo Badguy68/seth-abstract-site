@@ -1,5 +1,7 @@
 let currentShopCategory = "album";
 const cartState = {};
+let currentModalProductID = null;
+let currentModalSide = "front";
 
 //===================LOADING CARDS AND TABS=====================================
 //Create each product card and add to page based on product info
@@ -76,6 +78,7 @@ function initializeShopPage() {
   initializeShopGridEvents();
   renderShopProducts(currentShopCategory);
   updateCartUI();
+  initializeShopModalEvents();
 }
 initializeShopPage();
 
@@ -152,7 +155,7 @@ function refreshShopUI() {
 }
 
 
-//===================DEALING WITH ACTUAL QUANTITY BUTTONS=====================================
+//===================DEALING WITH ACTUAL QUANTITY BUTTONS AND BUTTONS / FLIPPING=====================================
 function initializeShopGridEvents() {
   const shopGrid = document.getElementById("shop-grid");
 
@@ -162,6 +165,11 @@ function initializeShopGridEvents() {
     if (!card) return;
 
     const productId = card.dataset.productId;
+
+    if (event.target.closest(".shop-card-image-button")) {
+      openShopModal(productId);
+      return;
+    }
 
     if (event.target.closest(".qty-plus")) {
       increaseProductQuantity(productId);
@@ -175,5 +183,77 @@ function initializeShopGridEvents() {
       return;
     }
   });
+}
+
+//===================POPUP IMAGE MODAL HANDLER STUFF=====================================
+function getProductById(productId) {
+  return shopProducts.find((product) => product.id === productId);
+}
+
+function updateModalImage() {
+  const modalImage = document.getElementById("shop-modal-image");
+
+  if (!currentModalProductID) return;
+
+  const imageSrc =
+    currentModalSide === "front"
+      ? "./shop-front-images/" + currentModalProductID + ".jpg"
+      : "./shop-back-images/" + currentModalProductID + ".jpg";
+
+  modalImage.src = "../home_assets/profile_pic_Art.png"; //imageSrc;
+  modalImage.alt = `${currentModalProductID} ${currentModalSide}`;
+}
+
+function openShopModal(productId) {
+  const modal = document.getElementById("shop-modal");
+
+  currentModalProductID = productId;
+  currentModalSide = "front";
+
+  updateModalImage();
+
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+}
+
+function closeShopModal() {
+  const modal = document.getElementById("shop-modal");
+  const modalImage = document.getElementById("shop-modal-image");
+
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+
+  currentModalProductID = null;
+  currentModalSide = "front";
+  modalImage.src = "";
+  modalImage.alt = "";
+}
+
+function flipShopModalCard() {
+  const modalImage = document.getElementById("shop-modal-image");
+
+  if (!currentModalProductID) return;
+
+  modalImage.classList.add("is-flipping");
+
+  setTimeout(() => {
+    currentModalSide = currentModalSide === "front" ? "back" : "front";
+    updateModalImage();
+  }, 175);
+
+  setTimeout(() => {
+    modalImage.classList.remove("is-flipping");
+  }, 350);
+}
+
+function initializeShopModalEvents() {
+  const modal = document.getElementById("shop-modal");
+  const modalBackdrop = modal.querySelector(".shop-modal-backdrop");
+  const modalClose = document.getElementById("shop-modal-close");
+  const modalImage = document.getElementById("shop-modal-image");
+
+  modalBackdrop.addEventListener("click", closeShopModal);
+  modalClose.addEventListener("click", closeShopModal);
+  modalImage.addEventListener("click", flipShopModalCard);
 }
 

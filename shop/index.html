@@ -105,14 +105,23 @@
   <!-- =========================
        IMAGE MODAL
   ========================= -->
-  <div class="shop-modal" aria-hidden="true">
-    <div class="shop-modal-backdrop"></div>
+  <div id="shop-modal" class="shop-modal" aria-hidden="true">
+  <div class="shop-modal-backdrop"></div>
 
-    <div class="shop-modal-content">
-      <button id="shop-modal-close" class="shop-modal-close" type="button" aria-label="Close artwork view">×</button>
+  <div class="shop-modal-content">
+    <div class="shop-modal-card-wrap">
       <img id="shop-modal-image" class="shop-modal-image" src="" alt="">
     </div>
+
+    <p id="shop-modal-hint" class="shop-modal-hint">
+      Tap the card to view the other side
+    </p>
+
+    <button id="shop-modal-close" class="button button-red shop-modal-close" type="button">
+      Close
+    </button>
   </div>
+</div>
 
 </main>
 

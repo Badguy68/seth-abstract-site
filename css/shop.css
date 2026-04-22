@@ -124,7 +124,7 @@
 }
 
 .shop-card.is-selected .shop-card-image-button img {
-  box-shadow: 0 0 10px 10px var(--color-accent-red);
+  box-shadow: 0 0 10px 10px var(--color-accent-gold);
   filter: brightness(1.06);
 }
 
@@ -271,7 +271,7 @@
 .shop-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.78);
   z-index: 300;
 }
 
@@ -279,30 +279,73 @@
   position: fixed;
   inset: 50% auto auto 50%;
   transform: translate(-50%, -50%);
-  width: min(90vw, 720px);
+  width: min(94vw, 760px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
   z-index: 301;
+}
+
+.shop-modal-card-wrap {
+  width: min(90vw, 480px);
+  max-height: 75vh;
+
+  aspect-ratio: 5 / 7;
 }
 
 .shop-modal-image {
   width: 100%;
+  height: 100%;
+
   display: block;
   border-radius: 18px;
+
+  object-fit: cover;
+  cursor: pointer;
+
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.shop-modal-image.is-flipping {
+  transform: rotateY(90deg) scale(0.98);
+  opacity: 0.4;
+}
+
+.shop-modal-hint {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  opacity: 0.75;
 }
 
 .shop-modal-close {
-  position: absolute;
-  top: -14px;
-  right: -14px;
+  min-width: 140px;
+}
 
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  border: none;
+@media (max-width: 600px) {
+  .shop-modal-content {
+    width: 94vw;
+    gap: 14px;
+  }
 
-  background: rgba(58, 31, 53, 0.95);
-  color: var(--color-text);
-  font-size: 1.4rem;
-  cursor: pointer;
+  .shop-modal-card-wrap {
+    width: 88vw;
+  }
+
+  .shop-modal-hint {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .shop-modal-card-wrap {
+    width: min(50vw, 420px);
+    max-height: 70vh;
+  }
 }
 
 /* =========================================================
