@@ -97,8 +97,8 @@
       <div id="shop-cart-total"class="shop-cart-total">Total: $0.00</div>
     </div>
 
-    <button class="shop-cart-checkout button button-red" type="button">
-      Checkout
+    <button id="shop-cart-open-checkout" class="shop-cart-checkout button button-mint" type="button">
+      Review Order
     </button>
   </div>
 
@@ -120,6 +120,66 @@
     <button id="shop-modal-close" class="button button-red shop-modal-close" type="button">
       Close
     </button>
+  </div>
+</div>
+
+
+<!-- =========================
+     CHECKOUT OVERLAY
+========================= -->
+<div id="shop-checkout-overlay" class="shop-checkout-overlay" aria-hidden="true">
+  <div class="shop-checkout-backdrop"></div>
+
+  <div class="shop-checkout-panel">
+    <div class="shop-checkout-header">
+      <h2 class="shop-checkout-title">Checkout</h2>
+      <button id="shop-checkout-close" class="button button-red shop-checkout-close" type="button">
+        Back
+      </button>
+    </div>
+
+    <div class="shop-checkout-email-section">
+      <label class="shop-field-label" for="shop-checkout-email">Email</label>
+      <input
+        id="shop-checkout-email"
+        class="shop-field-input"
+        type="email"
+        placeholder="you@example.com"
+      >
+
+      <label class="shop-checkbox-row">
+        <input id="shop-checkout-optin" type="checkbox">
+        <span>Keep me updated about new music, drops, and major updates</span>
+      </label>
+    </div>
+
+    <div class="shop-checkout-items-section">
+      <h3 class="shop-checkout-subtitle">Your Selection</h3>
+      <div id="shop-checkout-items" class="shop-checkout-items"></div>
+    </div>
+
+    <div class="shop-checkout-totals">
+      <div class="shop-checkout-line">
+        <span>Items</span>
+        <span id="shop-checkout-item-count">0</span>
+      </div>
+
+      <div class="shop-checkout-line">
+        <span>Discount</span>
+        <span id="shop-checkout-discount">$0.00</span>
+      </div>
+
+      <div class="shop-checkout-line shop-checkout-line-total">
+        <span>Total</span>
+        <span id="shop-checkout-total">$0.00</span>
+      </div>
+    </div>
+
+    <div class="shop-checkout-actions">
+      <button id="shop-checkout-submit" class="button button-gold" type="button">
+        Checkout
+      </button>
+    </div>
   </div>
 </div>
 

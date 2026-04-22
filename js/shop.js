@@ -1,3 +1,6 @@
+const SHOP_WEBHOOK_URL = "PASTE_YOUR_MAKE_WEBHOOK_URL_HERE";
+const SHOP_SQUARE_CHECKOUT_URL = "PASTE_YOUR_SQUARE_CHECKOUT_URL_HERE";
+
 let currentShopCategory = "album";
 const cartState = {};
 let currentModalProductID = null;
@@ -79,6 +82,7 @@ function initializeShopPage() {
   renderShopProducts(currentShopCategory);
   updateCartUI();
   initializeShopModalEvents();
+  initializeCheckoutOverlayEvents()
 }
 initializeShopPage();
 
@@ -165,6 +169,18 @@ function initializeShopGridEvents() {
     if (!card) return;
 
     const productId = card.dataset.productId;
+
+    //Check what was pressed and run the logic
+    if (event.target.closest(".qty-display")) {
+      const currentQuantity = getProductQuantity(productId);
+
+      if (currentQuantity === 0) {
+        increaseProductQuantity(productId);
+        refreshShopUI();
+      }
+
+      return;
+    }
 
     if (event.target.closest(".shop-card-image-button")) {
       openShopModal(productId);
@@ -256,4 +272,158 @@ function initializeShopModalEvents() {
   modalClose.addEventListener("click", closeShopModal);
   modalImage.addEventListener("click", flipShopModalCard);
 }
+
+
+//===================CART CHECKOUT SYSTEM=====================================
+function getCartItemsDetailed() {
+  return Object.entries(cartState)
+    .map(([productId, quantity]) => {
+      const product = getProductById(productId);
+
+      if (!product) return null;
+
+      return {
+        id: product.id,
+        name: product.name,
+        quantity,
+        price: product.price,
+        lineTotal: product.price * quantity
+      };
+    })
+    .filter(Boolean);
+}
+
+function buildOrderPayload() {
+  const email = document.getElementById("shop-checkout-email").value.trim();
+  const marketingOptIn = document.getElementById("shop-checkout-optin").checked;
+
+  return {
+    status: "pending",
+    createdAt: new Date().toISOString(),
+    email,
+    marketingOptIn,
+    items: getCartItemsDetailed(),
+    itemCount: getCartItemCount(),
+    subtotal: getCartSubtotal(),
+    discount: getCartDiscountAmount(),
+    total: getCartTotal()
+  };
+}
+
+function renderCheckoutOverlay() {
+  const checkoutItemsElement = document.getElementById("shop-checkout-items");
+  const checkoutItemCountElement = document.getElementById("shop-checkout-item-count");
+  const checkoutDiscountElement = document.getElementById("shop-checkout-discount");
+  const checkoutTotalElement = document.getElementById("shop-checkout-total");
+
+  const items = getCartItemsDetailed();
+  const itemCount = getCartItemCount();
+  const discount = getCartDiscountAmount();
+  const total = getCartTotal();
+
+  if (items.length === 0) {
+    checkoutItemsElement.innerHTML = `
+      <div class="shop-checkout-item">
+        <div class="shop-checkout-item-name">Your cart is empty</div>
+      </div>
+    `;
+  } else {
+    checkoutItemsElement.innerHTML = items.map((item) => `
+      <div class="shop-checkout-item">
+        <div class="shop-checkout-item-name">${item.name}</div>
+        <div class="shop-checkout-item-meta">
+          ${item.quantity} × $${item.price.toFixed(2)}
+        </div>
+      </div>
+    `).join("");
+  }
+
+  checkoutItemCountElement.textContent = itemCount;
+  checkoutDiscountElement.textContent = `$${discount.toFixed(2)}`;
+  checkoutTotalElement.textContent = `$${total.toFixed(2)}`;
+}
+
+function openCheckoutOverlay() {
+  const overlay = document.getElementById("shop-checkout-overlay");
+
+  renderCheckoutOverlay();
+
+  overlay.classList.add("is-open");
+  overlay.setAttribute("aria-hidden", "false");
+}
+
+function closeCheckoutOverlay() {
+  const overlay = document.getElementById("shop-checkout-overlay");
+
+  overlay.classList.remove("is-open");
+  overlay.setAttribute("aria-hidden", "true");
+}
+
+async function sendPendingOrderToWebhook(orderPayload) {
+  const response = await fetch(SHOP_WEBHOOK_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(orderPayload)
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to send order to webhook.");
+  }
+
+  return response;
+}
+
+async function handleCheckoutSubmit() {
+  const itemCount = getCartItemCount();
+
+  if (itemCount === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
+
+  const emailInput = document.getElementById("shop-checkout-email");
+  const email = emailInput.value.trim();
+
+  if (!email) {
+    alert("Please enter your email before continuing.");
+    emailInput.focus();
+    return;
+  }
+
+  const orderPayload = buildOrderPayload();
+
+  try {
+    const submitButton = document.getElementById("shop-checkout-submit");
+    submitButton.disabled = true;
+    submitButton.textContent = "Continuing...";
+
+    await sendPendingOrderToWebhook(orderPayload);
+
+    window.location.href = SHOP_SQUARE_CHECKOUT_URL;
+  } catch (error) {
+    alert("Something went wrong while preparing checkout. Please try again.");
+    console.error(error);
+  } finally {
+    const submitButton = document.getElementById("shop-checkout-submit");
+    submitButton.disabled = false;
+    submitButton.textContent = "Checkout";
+  }
+}
+
+function initializeCheckoutOverlayEvents() {
+  const overlay = document.getElementById("shop-checkout-overlay");
+  const backdrop = overlay.querySelector(".shop-checkout-backdrop");
+  const backButton = document.getElementById("shop-checkout-close");
+  const openButton = document.getElementById("shop-cart-open-checkout");
+  const submitButton = document.getElementById("shop-checkout-submit");
+
+  openButton.addEventListener("click", openCheckoutOverlay);
+  backButton.addEventListener("click", closeCheckoutOverlay);
+  backdrop.addEventListener("click", closeCheckoutOverlay);
+  submitButton.addEventListener("click", handleCheckoutSubmit);
+}
+
+
 
