@@ -107,7 +107,7 @@
 
         <!-- SECTION HEADER -->
         <div class="home-header">
-          <p class="text-header">Current Project</p>
+          <p class="text-header" id="easter-check">Current Project</p>
           <h2>The Living Archive</h2>
           <p class="music-subtext">
             Each track reimagines a classic poem through a distinct sound and visual identity.
@@ -278,7 +278,7 @@
         <img src="/global_assets/social_button_youtube_color.png" alt="Youtube">
       </a>
 
-      <a href="" target="_blank" aria-label="Raven Button">
+      <a target="_blank" aria-label="Raven Button" onclick="replaceWithDelay(document.body, 'Raven')">
         <img src="/home_assets/social_button_raven_color.png" alt="Raven Social">
       </a>
     </div>
@@ -286,8 +286,9 @@
 </footer>
 
   <!-- ========================= SCRIPTS ========================= -->
-  <script src="./js/global.js"></script>
-  <script src="./js/home.js"></script>
+  <script src="/js/global.js"></script>
+  <script src="/js/easter_egg.js"></script>
+  <script src="/js/home.js"></script>
 
 </body>
 

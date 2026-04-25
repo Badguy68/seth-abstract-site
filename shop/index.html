@@ -25,17 +25,10 @@
 
 </head>
 
-<body>
+<body data-active-page="shop">
 
   <!-- ========================= NAVIGATION ========================= -->
-  <header class="site-header">
-    <nav class="nav">
-      <a href="/" class="nav-item">Home</a>
-      <a href="/music" class="nav-item">Music</a>
-      <a href="/shop/" class="nav-item active">Shop</a>
-      <a href="/media/" class="nav-item">Media</a>
-    </nav>
-  </header>
+  <div id="site-header"></div>
 
   <!-- ========================= MAIN CONTENT ========================= -->
   <main class="shop-page-main">
@@ -186,11 +179,10 @@
 </main>
 
   <!-- ========================= FOOTER ========================= -->
-  <footer class="site-footer">
-    <p class="footer-text">A small signal left behind.</p>
-  </footer>
+  <div id="site-footer"></div>
 
   <!-- ========================= SCRIPTS ========================= -->
+   <script src="/js/includes.js"></script>
   <script src="../js/global.js"></script>
   <script src="./shopproducts.js"></script>
   <script src="../js/shop.js"></script>
