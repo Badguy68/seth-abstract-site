@@ -222,16 +222,16 @@ main {
   align-items: center;
   justify-content: center;
 
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
 
   border-radius: 50%;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .footer-socials img {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   object-fit: contain;
   display: block;
 }
