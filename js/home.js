@@ -152,6 +152,7 @@ let currentSong = 0;
 function updateSong() {
   //Check if Easter Egg is active, if so, skip updating songs
   if (document.getElementById("easter-check").innerHTML.includes("Raven")) return;
+  if (document.getElementById("easter-check2").innerHTML.includes("Raven")) return;
 
   const song = songs[currentSong];
 
