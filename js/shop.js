@@ -18,7 +18,7 @@ function createShopCardHTML(product) {
   return `
     <article class="shop-card ${selectedClass}" data-product-id="${product.id}">
       <button class="shop-card-image-button" type="button" aria-label="Open ${product.name} artwork">
-        <img src="../home_assets/profile_pic_Art.png" alt="${product.name}">
+        <img src="./shop-front-images/${product.id}.jpg" alt="${product.name}">
       </button>
 
       <div class="shop-card-body">
@@ -216,7 +216,7 @@ function updateModalImage() {
       ? "./shop-front-images/" + currentModalProductID + ".jpg"
       : "./shop-back-images/" + currentModalProductID + ".jpg";
 
-  modalImage.src = "../home_assets/profile_pic_Art.png"; //imageSrc;
+  modalImage.src = imageSrc;
   modalImage.alt = `${currentModalProductID} ${currentModalSide}`;
 }
 
