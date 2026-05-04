@@ -2,6 +2,11 @@
    SHOP PAGE
 ========================================================= */
 
+.section{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 .shop-page-main {
   flex: 1;
   padding-bottom: 120px;

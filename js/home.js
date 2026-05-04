@@ -128,21 +128,64 @@ setInitialHeroImages();
 const songs = [
   {
     img: "./home_assets/living_archive_cover.png",
-    poem: "She Walks in Beauty",
+    poem: "Charge of the Light Brigade",
     title: "Track 1",
-    desc: "A cinematic reinterpretation of Byron’s poem."
+    desc: "cinematic orchestral rock"
   },
   {
     img: "./home_assets/living_archive_cover.png",
-    poem: "Ozymandias",
+    poem: "Annabel Lee",
     title: "Track 2",
-    desc: "A powerful, decaying anthem inspired by Shelley."
+    desc: "dark rap with a grieving electric guitar"
+  },
+  {
+    img: "./home_assets/living_archive_cover.png",
+    poem: "Stopping by Woods on a Snowy Evening",
+    title: "Track 3",
+    desc: "dramatic and haunting folk"
   },
   {
     img: "./home_assets/living_archive_cover.png",
     poem: "A Dream Within a Dream",
-    title: "Track 3",
-    desc: "A haunting reflection on time and illusion."
+    title: "Track 4",
+    desc: "experimental dark synthwave"
+  },
+  {
+    img: "./home_assets/living_archive_cover.png",
+    poem: "Toil and Trouble",
+    title: "Track 5",
+    desc: "witchy edm with a high energy beat"
+  },
+  {
+    img: "./home_assets/living_archive_cover.png",
+    poem: "The Raven",
+    title: "Track 6",
+    desc: "energetic and flowing dark rap"
+  },
+  {
+    img: "./home_assets/living_archive_cover.png",
+    poem: "She Walks in Beauty",
+    title: "Track 7",
+    desc: "funky and fun romantic pop"
+  },
+  {
+    img: "./home_assets/living_archive_cover.png",
+    poem: "The Road Not Taken",
+    title: "Track 8",
+    desc: "glowing country featuring a folk choir"
+  },
+  {
+    img: "./home_assets/living_archive_cover.png",
+    poem: "I could not stop for Death",
+    title: "Track 9",
+    desc: "driving alt-rock with powerful vocals"
+  },
+  {
+    img: "./home_assets/living_archive_cover.png",
+    poem: "Ozymandias",
+    title: "Track 10",
+    // desc: "epic cinematic metal with heavy storytelling"
+    desc: "secret keyword: belief"
   }
 ];
 
