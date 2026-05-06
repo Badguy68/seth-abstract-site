@@ -9,73 +9,85 @@ const shopProducts = [
     id: "thelivingarchivebundle",
     name: "The Living Archive bundle (11 postcards)",
     category: "album",
-    price: 74
+    price: 74,
+    square: "5IGSU2I3YLFEC5ZM2KI43ALJ"
   },
   {
     id: "thelivingarchive",
     name: "The Living Archive (Album Cover)",
     category: "album",
-    price: 9
+    price: 9,
+    square: "7KIYHVH2CZGWR4J3423B3TEG"
   },
   {
     id: "chargeofthelightbrigade",
     name: "Charge of the Light Brigade",
     category: "album",
-    price: 9
+    price: 9,
+    square: "6FN6SYSWBDGFMBOX6LH7CVJC"
   },
   {
     id: "annabellee",
     name: "Annabel Lee",
     category: "album",
-    price: 9
+    price: 9,
+    square: "4WJPN4IPH2KKXXRA4HAWAY2P"
   },
   {
     id: "stoppingbywoodsonasnowyevening",
     name: "Stopping by Woods on a Snowy Evening",
     category: "album",
-    price: 9
+    price: 9,
+    square: "THZAOH2ZR6GSRFN2RBGWNEWW"
   },
   {
     id: "adreamwithinadream",
     name: "A Dream Within a Dream",
     category: "album",
-    price: 9
+    price: 9,
+    square: "Q5S6HFXDONJCRECHAZFBFRVL"
   },
   {
     id: "toilandtrouble",
     name: "Toil & Trouble",
     category: "album",
-    price: 9
+    price: 9,
+    square: "SJK35YRD7GMJLDTLQJFPEAXK"
   },
   {
     id: "shewalksinbeauty",
     name: "She Walks in Beauty",
     category: "album",
-    price: 9
+    price: 9,
+    square: "ARFLDNIFU3CJVLFAVWUOYY5R"
   },
   {
     id: "theraven",
     name: "The Raven",
     category: "album",
-    price: 9
+    price: 9,
+    square: "SS36SFFMACZHYWJGXVPDANV7"
   },
   {
     id: "theroadnottaken",
     name: "The Road Not Taken",
     category: "album",
-    price: 9
+    price: 9,
+    square: "2YETHMCLNOOIK6TYZPEPLYHY"
   },
   {
     id: "icouldnotstopfordeath",
     name: "I could not stop for Death",
     category: "album",
-    price: 9
+    price: 9,
+    square: "KOG5TAWCFW2IQKN6P54WI4LP"
   },
   {
     id: "ozymandias",
     name: "Ozymandias",
     category: "album",
-    price: 9
+    price: 9,
+    square: "WP4PFIKPMCC3ZNFT6YIWZSTE"
   }
 
   //GENERAL ART ----------------------------------------------

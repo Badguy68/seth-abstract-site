@@ -1,5 +1,4 @@
-const SHOP_WEBHOOK_URL = "PASTE_YOUR_MAKE_WEBHOOK_URL_HERE";
-const SHOP_SQUARE_CHECKOUT_URL = "PASTE_YOUR_SQUARE_CHECKOUT_URL_HERE";
+const SHOP_WEBHOOK_URL = "https://hook.us2.make.com/k53rdemx7o9jg7hcl19ye876vybexlhm";
 
 let currentShopCategory = "album";
 const cartState = {};
@@ -285,6 +284,7 @@ function getCartItemsDetailed() {
       return {
         id: product.id,
         name: product.name,
+        catalog_object_id: product.square,
         quantity,
         price: product.price,
         lineTotal: product.price * quantity
@@ -298,15 +298,10 @@ function buildOrderPayload() {
   const marketingOptIn = document.getElementById("shop-checkout-optin").checked;
 
   return {
-    status: "pending",
     createdAt: new Date().toISOString(),
     email,
     marketingOptIn,
-    items: getCartItemsDetailed(),
-    itemCount: getCartItemCount(),
-    subtotal: getCartSubtotal(),
-    discount: getCartDiscountAmount(),
-    total: getCartTotal()
+    items: getCartItemsDetailed()
   };
 }
 
@@ -399,9 +394,21 @@ async function handleCheckoutSubmit() {
     submitButton.disabled = true;
     submitButton.textContent = "Continuing...";
 
-    await sendPendingOrderToWebhook(orderPayload);
+    
 
-    window.location.href = SHOP_SQUARE_CHECKOUT_URL;
+  // Create webhook-safe copy
+  const webhookPayload = {
+    ...orderPayload,
+    items: orderPayload.items.map(item => ({
+      ...item,
+      quantity: String(item.quantity)
+    }))
+  };
+
+  const response = await sendPendingOrderToWebhook(webhookPayload);
+
+  console.log("Received response from webhook:", response);
+    window.location.href = response.checkoutUrl;
   } catch (error) {
     alert("Something went wrong while preparing checkout. Please try again.");
     console.error(error);
