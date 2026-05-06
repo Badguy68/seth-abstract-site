@@ -78,6 +78,7 @@ function initializeShopTabs() {
 function initializeShopPage() {
   initializeShopTabs();
   initializeShopGridEvents();
+  applySecretCardFromUrl()
   renderShopProducts(currentShopCategory);
   updateCartUI();
   initializeShopModalEvents();
@@ -425,7 +426,7 @@ async function handleCheckoutSubmit() {
 function applySecretCardFromUrl() {
   const params = new URLSearchParams(window.location.search);
 
-  if (!params.get("gated") === "true") return;
+  if (params.get("gated") !== "true") return;
 
   setProductQuantity("thekey", 1);
 
@@ -439,14 +440,10 @@ function initializeCheckoutOverlayEvents() {
   const openButton = document.getElementById("shop-cart-open-checkout");
   const submitButton = document.getElementById("shop-checkout-submit");
 
-  applySecretCardFromUrl();
-
   openButton.addEventListener("click", openCheckoutOverlay);
   backButton.addEventListener("click", closeCheckoutOverlay);
   backdrop.addEventListener("click", closeCheckoutOverlay);
   submitButton.addEventListener("click", handleCheckoutSubmit);
-
-  updateCartUI();
 }
 
 
