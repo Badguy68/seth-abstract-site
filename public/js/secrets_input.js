@@ -71,7 +71,7 @@ async function handleSecretSubmit(e) {
 
   if (isCorrect) {
     message.textContent = "entering the abstract now";
-    window.location.href = "/secrets/intheabstract/";
+    window.location.href = "/secrets/the-gate-opens/";
   } else {
     message.textContent = "something is not in the flow";
   }

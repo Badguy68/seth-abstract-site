@@ -475,7 +475,7 @@
 
 .shop-checkbox-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   font-family: var(--font-body);
   font-size: 0.95rem;

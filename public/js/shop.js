@@ -419,6 +419,19 @@ async function handleCheckoutSubmit() {
   }
 }
 
+
+//===================PAGE INITIALIZATION=====================================
+
+function applySecretCardFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+
+  if (!params.get("gated") === "true") return;
+
+  setProductQuantity("thekey", 1);
+
+  window.history.replaceState({}, "", "/shop/");
+}
+
 function initializeCheckoutOverlayEvents() {
   const overlay = document.getElementById("shop-checkout-overlay");
   const backdrop = overlay.querySelector(".shop-checkout-backdrop");
@@ -426,10 +439,14 @@ function initializeCheckoutOverlayEvents() {
   const openButton = document.getElementById("shop-cart-open-checkout");
   const submitButton = document.getElementById("shop-checkout-submit");
 
+  applySecretCardFromUrl();
+
   openButton.addEventListener("click", openCheckoutOverlay);
   backButton.addEventListener("click", closeCheckoutOverlay);
   backdrop.addEventListener("click", closeCheckoutOverlay);
   submitButton.addEventListener("click", handleCheckoutSubmit);
+
+  updateCartUI();
 }
 
 

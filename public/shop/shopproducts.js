@@ -1,6 +1,6 @@
 const shopTabDescriptions = {
   album: "Art prints based on the songs and poems from the album 'The Living Archive'! Click on a card to see it up close.",
-  art: "Standalone art prints and postcard pieces drawn from Seth Abstract’s visual work outside the album."
+  art: "Standalone art prints coming soon..."
 };
 
 const shopProducts = [
@@ -88,7 +88,15 @@ const shopProducts = [
     category: "album",
     price: 9,
     square: "WP4PFIKPMCC3ZNFT6YIWZSTE"
-  }
+  },
 
   //GENERAL ART ----------------------------------------------
+
+  {
+    id: "thekey",
+    name: "The Key",
+    category: "hidden",
+    price: 0,
+    square: "PPZFO4I6JOCAVNIUIPZL7VQV"
+  }
 ];

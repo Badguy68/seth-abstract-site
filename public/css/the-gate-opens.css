@@ -1,0 +1,181 @@
+.site-header,
+.site-footer {
+  background: #050505 !important;
+}
+
+.nav-item {
+  color: #ffffff !important;
+}
+
+.footer-socials img {
+  filter: brightness(0) invert(1);
+}
+
+/* =========================================================
+   SECRET SUCCESS PAGE
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #050505;
+  color: #f4f4f4;
+  font-family: monospace;
+}
+
+/* =========================================================
+   PAGE STRUCTURE
+========================================================= */
+
+.secret-success-page {
+  width: 100%;
+}
+
+.secret-hero,
+.scroll-statement,
+.secret-reward {
+  min-height: 100vh;
+  padding: 32px 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.secret-kicker {
+  margin: 0 0 18px;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  opacity: 0.55;
+}
+
+.secret-hero h1 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 18vw, 11rem);
+  line-height: 0.86;
+  font-weight: 400;
+}
+
+.down-arrow {
+  margin-top: 42px;
+
+  font-size: 2rem;
+  opacity: 0.65;
+
+  animation: arrowPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   SCROLL STATEMENTS
+========================================================= */
+
+.scroll-statement p {
+  max-width: 900px;
+  margin: 0;
+
+  font-size: clamp(2.8rem, 10vw, 8rem);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+/* =========================================================
+   REWARD SECTION
+========================================================= */
+
+.secret-reward h2 {
+  max-width: 900px;
+  margin: 0 0 24px;
+
+  font-family: "alphabet-soup-pro", monospace;
+  font-size: clamp(3rem, 13vw, 9rem);
+  line-height: 0.88;
+  font-weight: 400;
+}
+
+.reward-description {
+  max-width: 620px;
+  margin: 0 auto 34px;
+
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.78;
+}
+
+.secret-button {
+  display: inline-block;
+
+  padding: 14px 24px;
+  border: 1px solid #f4f4f4;
+
+  background: #f4f4f4;
+  color: #050505;
+
+  font-family: monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.secret-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.82;
+}
+
+.reward-note {
+  max-width: 460px;
+  margin: 22px auto 0;
+
+  font-size: 0.8rem;
+  line-height: 1.5;
+  opacity: 0.45;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .scroll-statement p {
+    font-size: clamp(2.8rem, 14vw, 5.5rem);
+  }
+
+  .secret-button {
+    width: 100%;
+    max-width: 340px;
+  }
+}
