@@ -367,7 +367,7 @@ async function sendPendingOrderToWebhook(orderPayload) {
     throw new Error("Failed to send order to webhook.");
   }
 
-  return response;
+  return response.json();
 }
 
 async function handleCheckoutSubmit() {
