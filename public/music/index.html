@@ -35,6 +35,7 @@
 <body data-active-page="music">
 
   <!-- ========================= NAVIGATION ========================= -->
+   <p class="small-keyword">secret keyword: intent</p>
   <div id="site-header"></div>
 
   <!-- ========================= MAIN CONTENT ========================= -->
@@ -118,6 +119,10 @@
    <script src="/js/includes.js"></script>
   <script src="../js/global.js"></script>
 
+  <!-- ==== Auto Scroll for Keyword ==== -->
+  <script>
+    window.addEventListener("load", () => window.scrollTo(0, document.getElementById("site-header").offsetTop));
+  </script>
 </body>
 
 </html>

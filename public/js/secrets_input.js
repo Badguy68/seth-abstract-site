@@ -7,7 +7,8 @@ const SECRET_KEYWORD_HASHES = [
   "97d8b48aaf83f22eaea10489a20f4f85c880e0dbb22e5afe0522edd131d9c289",
   "f354ee99e2bc863ce19d80b843353476394ebc3530a51c9290d629065bacc3b3",
   "41ffd8b76afc92a65758fd9a080ae80421c196f251263b87cbfb6e567dda0879",
-  "f31852d7e68e8ab270326b1dbb472a2e65ff1a80ed2f4672ff7b280cbfbd9c82"
+  "f31852d7e68e8ab270326b1dbb472a2e65ff1a80ed2f4672ff7b280cbfbd9c82",
+  "282bcbc3f0a34a8a4ac6f00c276fcf66cf3757a3332e83d92208e5079af46922"
 ];
 
 function normalize(word) {
@@ -30,13 +31,19 @@ async function getUserInputHashes() {
   return hashes;
 }
 
-function arraysMatchAsSets(a, b) {
-  if (a.length !== b.length) return false;
+function arraysMatchAsSets(userHashes, hashes) {
+  // if (a.length !== b.length) return false;
 
-  const sortedA = [...a].sort();
-  const sortedB = [...b].sort();
+  // const sortedA = [...a].sort();
+  // const sortedB = [...b].sort();
 
-  return sortedA.every((val, i) => val === sortedB[i]);
+  // return sortedA.every((val, i) => val === sortedB[i]);
+
+  const uniqueUserHashes = [...new Set(userHashes)];
+
+  if (uniqueUserHashes.length !== 5) return false;
+
+  return uniqueUserHashes.every(hash => hashes.includes(hash));
 }
 
 async function sha256(text) {

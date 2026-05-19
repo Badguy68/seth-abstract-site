@@ -185,7 +185,7 @@ const songs = [
     poem: "Ozymandias",
     title: "Track 10",
     // desc: "epic cinematic metal with heavy storytelling"
-    desc: "secret keyword: belief"
+    desc: "SECRET KEYWORD: BELIEF"
   }
 ];
 

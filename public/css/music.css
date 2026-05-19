@@ -187,3 +187,20 @@ align-items: center;
     font-size: 1.7rem;
   }
 }
+
+
+/* =========================================================
+   KEY WORD STUFF
+========================================================= */
+.small-keyword {
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: rgb(93, 63, 74);
+  opacity: 1;
+  background: rgb(123, 80, 94);
+  margin: 0;
+  padding: 0;
+}
