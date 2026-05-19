@@ -1,3 +1,4 @@
+
 /* =========================================================
    MUSIC PAGE
    Stylized minimal Hyperfollow-style layout
@@ -203,4 +204,5 @@ align-items: center;
   background: rgb(123, 80, 94);
   margin: 0;
   padding: 0;
+  display: none;
 }

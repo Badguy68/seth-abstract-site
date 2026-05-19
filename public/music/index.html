@@ -121,7 +121,10 @@
 
   <!-- ==== Auto Scroll for Keyword ==== -->
   <script>
-    window.addEventListener("load", () => window.scrollTo(0, document.getElementById("site-header").offsetTop));
+    window.addEventListener("load", () => {
+      document.querySelector(".small-keyword").style.display = "flex";
+      window.scrollTo(0, document.getElementById("site-header").offsetTop);
+    });
   </script>
 </body>
 
