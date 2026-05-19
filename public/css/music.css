@@ -198,11 +198,17 @@ align-items: center;
   justify-content: center;
   text-align: center;
   font-family: var(--font-body);
-  font-size: 0.6rem;
+  font-size: 0.45rem;
   color: rgb(93, 63, 74);
   opacity: 1;
   background: rgb(123, 80, 94);
   margin: 0;
   padding: 0;
   display: none;
+}
+
+@media (min-width: 600px) {
+.small-keyword {
+  font-size: 0.6rem;
+}
 }
