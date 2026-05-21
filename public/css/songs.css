@@ -1,0 +1,190 @@
+
+/* =========================================================
+   MUSIC PAGE
+   Stylized minimal Hyperfollow-style layout
+========================================================= */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.music-page-main {
+  flex: 1;
+}
+
+/* =========================================================
+   MAIN PORTAL
+========================================================= */
+
+.music-portal {
+  display: flex;
+  justify-content: center;
+}
+
+.music-portal-inner {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =========================================================
+   COVER
+========================================================= */
+
+.music-cover {
+  width: 100%;
+  max-width: 55%;
+  margin: 0 auto 28px;
+}
+
+.music-cover img {
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+}
+
+/* =========================================================
+   META
+========================================================= */
+
+.music-meta {
+  margin-bottom: 28px;
+}
+
+.music-title {
+    font-size: 10vw;
+  margin: 8px 0 8px;
+}
+
+.music-artist {
+  font-family: var(--font-header);
+  font-size: 1.5rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.text-desc{
+    font-family: var(--font-body);
+}
+
+/* =========================================================
+   PLATFORM LINKS
+========================================================= */
+
+.platform-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.platform-link {
+display: grid;
+grid-template-columns: 9vh 1fr 9vh;
+align-items: center;
+
+  height: 9vh;
+  /* padding: 14px 18px; */
+  border-radius: 14px;
+
+  text-decoration: none;
+  color: var(--color-text);
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.platform-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.platform-link:hover .platform-arrow {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+
+.platform-left {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+.platform-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.platform-name {
+  justify-self: center;
+  text-align: center;
+  flex: 1;
+  margin-left: 16px;
+  font-family: var(--font-accent);
+  font-size: 1.5rem;
+}
+
+.platform-arrow {
+  font-size: 1.2rem;
+  opacity: 0.7;
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* =========================================================
+   BOTTOM NOTE
+========================================================= */
+
+.platform-note {
+  margin: 0px auto;
+  padding: 0 6vw;
+
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.4;
+
+  opacity: 0.65;
+  text-align: center;
+
+  width: 100%;
+  max-width: 520px;
+}
+
+/* =========================================================
+   LARGER SCREENS
+========================================================= */
+
+@media (min-width: 700px) {
+  .music-cover {
+    max-width: 50%;
+  }
+
+  .music-portal-inner {
+    max-width: 560px;
+  }
+
+  .music-title {
+    font-size: 3rem;
+    margin: 8px 0 8px;
+  }
+
+  .platform-name {
+    font-size: 1.7rem;
+  }
+}

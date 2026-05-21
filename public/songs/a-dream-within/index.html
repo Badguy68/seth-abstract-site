@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,15 @@
 
   <!-- ========================= TRACKING ========================= -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB7LTYMNQJ"></script>
-  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NB7LTYMNQJ');</script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-NB7LTYMNQJ');</script>
 
   <!-- ========================= FONTS ========================= -->
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap"
+    rel="stylesheet">
 
   <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/ugg8kvv.css">
@@ -25,7 +28,7 @@
   <link rel="stylesheet" href="/css/layout.css">
 
   <!-- Page-Specific Styles -->
-  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/songs.css">
 
 </head>
 
@@ -35,7 +38,90 @@
   <div id="site-header"></div>
 
   <!-- ========================= MAIN CONTENT ========================= -->
-  <main>
+  <main class="music-page-main">
+
+    <section class="section music-portal">
+      <div class="music-portal-inner">
+
+        <!-- Album Art -->
+        <figure class="music-cover">
+          <img src="/shop/shop-front-images/adreamwithinadream.jpg" alt="A Dream Within a Dream album cover">
+        </figure>
+
+        <!-- Title Area -->
+        <div class="music-meta">
+          <h1 class="music-title">A Dream Within a Dream</h1>
+          <p class="music-artist">Seth Abstract</p>
+          <p class="text-desc">To listen to the corresponding song for the artwork and poem click on a link below!</p>
+        </div>
+
+
+
+        <!-- Platform Links -->
+        <div class="platform-links">
+          <!-- Spotify -->
+          <a href="https://open.spotify.com/track/5F5MZzzEavmWSsJLgsYgQP?si=2fa4d315dd024b7e"
+            class="platform-link">
+            <div class="platform-left">
+              <img src="/music/assets/logo_spotify.jpg" alt="Spotify logo">
+            </div>
+            <div class="platform-name">
+              Spotify
+            </div>
+            <div class="platform-arrow">
+              →
+            </div>
+          </a>
+
+          <!-- Apple Music -->
+          <a href="https://music.apple.com/us/song/a-dream-within-a-dream/1892691865" class="platform-link">
+            <div class="platform-left">
+              <img src="/music/assets/logo_applemusic.jpg" alt="Apple Music logo">
+            </div>
+            <div class="platform-name">
+              Apple Music
+            </div>
+            <div class="platform-arrow">
+              →
+            </div>
+          </a>
+
+          <!-- YouTube Music -->
+          <a href="https://youtu.be/ZnP2aXf0G90?si=5v9miSjjHEwkRoFa"
+            class="platform-link">
+            <div class="platform-left">
+              <img src="/music/assets/logo_youtube.jpg" alt="YouTube Music logo">
+            </div>
+            <div class="platform-name">
+              YouTube Music
+            </div>
+            <div class="platform-arrow">
+              →
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="platform-note">
+      If your listening platform isn't listed just search up 'Seth Abstract'. I am on most music platforms :)
+    </div>
+
+    <section class="section bts-section">
+      <div class="bts-inner">
+        <p class="bts-kicker">Behind the Archive</p>
+        <h2 class="bts-title">Making the Album Art</h2>
+        <p class="bts-desc">
+          A behind the scenes look at the process for making the art print that goes with this song/poem!
+        </p>
+
+        <div class="bts-video-frame">
+          <video src="/music/assets/living_archive_art_bts.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+    </section>
 
   </main>
 
@@ -43,9 +129,9 @@
   <div id="site-footer"></div>
 
   <!-- ========================= SCRIPTS ========================= -->
-    <script src="/js/includes.js"></script>
+  <script src="/js/includes.js"></script>
   <script src="/js/global.js"></script>
-  <script src="/js/home.js"></script>
 
 </body>
+
 </html>
