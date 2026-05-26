@@ -1,0 +1,195 @@
+/* =========================================================
+   WOVEN UPLOAD BASE
+========================================================= */
+
+.woven-upload-main {
+  flex: 1;
+  display: flex;
+}
+
+.woven-upload-section {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.woven-upload-panel {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.woven-upload-title {
+  margin: 8px 0 14px;
+}
+
+.woven-upload-description {
+  max-width: 540px;
+  margin: 0 auto 30px;
+  opacity: 0.82;
+}
+
+/* =========================================================
+   FORM VIEW
+========================================================= */
+
+.woven-upload-form-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.is-hidden {
+  display: none;
+}
+
+/* =========================================================
+   FILE PICKER
+========================================================= */
+
+.woven-upload-picker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 190px;
+  padding: 12px 18px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  color: var(--color-text);
+  font-family: var(--font-header);
+  cursor: pointer;
+
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+}
+
+.woven-upload-picker:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.woven-upload-picker input {
+  display: none;
+}
+
+/* =========================================================
+   CANVAS PREVIEW
+========================================================= */
+
+.woven-canvas-wrap {
+  width: min(86vw, 500px);
+  aspect-ratio: 1 / 1;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#woven-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.woven-controls {
+  width: min(86vw, 500px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.woven-slider-label {
+  font-family: var(--font-header);
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.woven-slider {
+  width: 100%;
+  accent-color: var(--color-text);
+}
+
+.woven-submit-button {
+  min-width: 190px;
+}
+
+/* =========================================================
+   NOTES / STATUS
+========================================================= */
+
+.woven-privacy-note {
+  max-width: 460px;
+  margin: 0 auto;
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0.58;
+}
+
+.woven-status-message {
+  min-height: 1.4em;
+  margin: 0;
+
+  font-size: 0.9rem;
+  opacity: 0.78;
+}
+
+/* =========================================================
+   SUCCESS VIEW
+========================================================= */
+
+.woven-success-view {
+  margin-top: 36px;
+}
+
+.woven-success-title {
+  margin: 0 0 12px;
+
+  font-family: var(--font-accent);
+  font-size: clamp(3rem, 14vw, 7rem);
+  line-height: 0.9;
+  font-weight: 400;
+}
+
+.woven-success-message {
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .woven-upload-section {
+    align-items: flex-start;
+  }
+
+  .woven-upload-panel {
+    padding-top: 28px;
+  }
+
+  .woven-submit-button,
+  .woven-upload-picker {
+    width: 100%;
+    max-width: 320px;
+  }
+}

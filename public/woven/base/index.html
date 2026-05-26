@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Seth Abstract</title>
+
+  <!-- ========================= TRACKING ========================= -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB7LTYMNQJ"></script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NB7LTYMNQJ');</script>
+  
+  <!-- ========================= FONTS ========================= -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/ugg8kvv.css">
+
+  <!-- ========================= STYLES ========================= -->
+  <!-- Global Design System -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/layout.css">
+
+  <!-- Page-Specific Styles -->
+  <link rel="stylesheet" href="/css/woven_base.css">
+
+</head>
+
+<body data-active-page>
+
+  <!-- ========================= NAVIGATION ========================= -->
+  <div id="site-header"></div>
+
+  <!-- ========================= MAIN CONTENT ========================= -->
+  <main class="woven-upload-main">
+
+    <section class="section woven-upload-section">
+      <div class="woven-upload-panel">
+
+        <p class="text-header">Woven Upload Base</p>
+
+        <h1 class="woven-upload-title">
+          Add your image to the archive.
+        </h1>
+
+        <p class="woven-upload-description">
+          Upload or take a photo. It will be automatically cropped into a square and transformed into a black and white piece to be uploaded onto the woven page.
+        </p>
+
+        <!-- This view appears before successful submission -->
+        <div id="woven-upload-form-view" class="woven-upload-form-view">
+
+          <label class="woven-upload-picker">
+            <input
+              id="woven-image-input"
+              type="file"
+              accept="image/*"
+            >
+            <span>Choose Image</span>
+          </label>
+
+          <div class="woven-canvas-wrap">
+            <canvas id="woven-canvas" width="500" height="500"></canvas>
+          </div>
+
+          <div class="woven-controls">
+            <label class="woven-slider-label" for="woven-threshold-slider">
+              Threshold
+            </label>
+
+            <input
+              id="woven-threshold-slider"
+              class="woven-slider"
+              type="range"
+              min="0"
+              max="255"
+              value="128"
+            >
+          </div>
+
+          <button id="woven-submit-button" class="button button-red woven-submit-button" type="button">
+            Accept Image
+          </button>
+
+          <p class="woven-privacy-note">
+            By submitting, you allow this image to be added to the public Woven archive.
+          </p>
+
+          <p id="woven-status-message" class="woven-status-message"></p>
+
+        </div>
+
+        <!-- This view appears after successful submission or return visit -->
+        <div id="woven-success-view" class="woven-success-view is-hidden">
+          <h2 class="woven-success-title">
+            received
+          </h2>
+
+          <p class="woven-success-message">
+            Your image has entered the loom.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================= FOOTER ========================= -->
+  <div id="site-footer"></div>
+
+  <!-- ========================= SCRIPTS ========================= -->
+    <script src="/js/includes.js"></script>
+  <script src="/js/global.js"></script>
+  <script src="/js/woven_base.js"></script>
+
+</body>
+</html>
