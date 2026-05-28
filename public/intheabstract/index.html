@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="/css/layout.css">
 
   <!-- Page-Specific Styles -->
-  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/intheabstract.css">
 
 </head>
 
@@ -35,7 +35,121 @@
   <div id="site-header"></div>
 
   <!-- ========================= MAIN CONTENT ========================= -->
-  <main>
+  <main class="abstract-page">
+
+    <section class="abstract-hero">
+      <h1>THE ABSTRACT</h1>
+
+      <p class="abstract-intro">
+        You found your way here. This page updates every Sunday with notes,
+        fragments, songs, and voices from the hidden side of The Abstract.
+        Please do not share the direct link. Others should find the key themselves.
+      </p>
+    </section>
+
+    <section class="abstract-panel-grid">
+
+      <article class="abstract-mini-panel">
+        <span class="panel-label">Archive Status</span>
+        <p><strong>Witnesses:</strong> <span id="witness-count"></span></p>
+        <p><strong>Week:</strong> <span id="archive-week"></span></p>
+        <p><strong>Updated:</strong> <span id="archive-updated"></span></p>
+      </article>
+
+      <article class="abstract-mini-panel">
+        <span class="panel-label">Current Listening</span>
+        <div class="listening-card">
+          <img id="song-cover" src="" alt="Album cover">
+          <div>
+            <h2 id="song-title"></h2>
+            <p id="song-artist"></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="abstract-mini-panel">
+        <span class="panel-label">Current Fragment</span>
+        <p id="current-fragment" class="fragment-text"></p>
+      </article>
+
+    </section>
+
+    <section class="abstract-section weekly-dispatch">
+      <div class="section-heading">
+        <h2>Weekly Dispatch</h2>
+        <p>Art and thoughts from the current week. Some things may become public, some will be gone after a week.</p>
+      </div>
+
+      <article id="weekly-post" class="weekly-post">
+        <!-- Injected by JS -->
+      </article>
+    </section>
+
+    <section class="abstract-section voices-section">
+      <div class="section-heading">
+        <h2>Voices from the Abstract</h2>
+        <p>Fragments submitted by witnesses.</p>
+      </div>
+
+      <div class="voices-grid">
+        <article>
+          <span class="voice-label">Thought</span>
+          <p id="community-thought"></p>
+        </article>
+
+        <article>
+          <span class="voice-label">Poem</span>
+          <div id="community-poem" class="poem-block"></div>
+        </article>
+
+        <article>
+          <span class="voice-label">Artwork</span>
+          <img id="community-artwork" src="" alt="Community artwork">
+          <p id="community-artwork-caption"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="abstract-section submit-section">
+      <div class="section-heading">
+        <h2>Submit to the Abstract</h2>
+        <p>Send something honest. A thought, poem, artwork, or idea for a song.</p>
+      </div>
+
+      <form id="abstract-submit-form">
+        <label>
+          Submission Type
+          <select name="type" required>
+            <option value="">Choose one</option>
+            <option value="thought">Thought</option>
+            <option value="poem">Poem</option>
+            <option value="artwork">Artwork</option>
+            <option value="song idea">Song adaptation idea</option>
+          </select>
+        </label>
+
+        <label>
+          Your Submission
+          <textarea name="message" rows="7" required></textarea>
+        </label>
+
+        <label>
+          Email Optional
+          <input type="email" name="email">
+        </label>
+
+        <label>
+          Name / Handle Optional
+          <input type="text" name="handle">
+        </label>
+
+        <button type="submit">Send to the Archive</button>
+      </form>
+    </section>
+
+    <footer class="abstract-footer">
+      <p>Updated Sundays. The Abstract grows.</p>
+    </footer>
 
   </main>
 
@@ -45,7 +159,8 @@
   <!-- ========================= SCRIPTS ========================= -->
     <script src="/js/includes.js"></script>
   <script src="/js/global.js"></script>
-  <script src="/js/home.js"></script>
+  <script src="/js/intheabstract.js"></script>
+  <script src="/js/intheabstractposts.js"></script>
 
 </body>
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +8,13 @@
 
   <!-- ========================= TRACKING ========================= -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB7LTYMNQJ"></script>
-  <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-NB7LTYMNQJ');</script>
-
+  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NB7LTYMNQJ');</script>
+  
   <!-- ========================= FONTS ========================= -->
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap"
-    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
   <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/ugg8kvv.css">
@@ -40,40 +37,6 @@
   <!-- ========================= MAIN CONTENT ========================= -->
   <main class="woven-upload-main">
 
-    <section class="section woven-feedback-section">
-      <div class="woven-feedback-panel">
-
-        <div class="woven-feedback-copy">
-          <p class="text-header">Art Print Feedback</p>
-
-          <h2 class="woven-feedback-title">
-            How are the cards?
-          </h2>
-
-          <p class="woven-feedback-description">
-            Share thoughts, ideas, or if something went wrong with your cards. If you want me to get back to you also include your email!
-          </p>
-          <p id="woven-feedback-status" class="woven-feedback-status">Enter your feedback!</p>
-        </div>
-
-        <form id="woven-feedback-form" class="woven-feedback-form">
-          <textarea id="woven-feedback-message" class="woven-feedback-textarea"
-            placeholder="Write feedback, ideas, or an issue with your order..." maxlength="1200"></textarea>
-
-          <input id="woven-feedback-email" class="woven-feedback-email" type="email" placeholder="Email (optional)">
-
-          <button class="button button-red woven-feedback-button" type="submit">
-            Send Feedback
-          </button>
-
-          
-
-          
-        </form>
-
-      </div>
-    </section>
-
     <section class="section woven-upload-section">
       <div class="woven-upload-panel">
 
@@ -84,15 +47,18 @@
         </h1>
 
         <p class="woven-upload-description">
-          Upload or take a photo. It will be automatically cropped into a square and transformed into a black and white
-          piece to be uploaded onto the Woven gallery page.
+          Upload or take a photo. It will be automatically cropped into a square and transformed into a black and white piece to be uploaded onto the woven page.
         </p>
 
         <!-- This view appears before successful submission -->
         <div id="woven-upload-form-view" class="woven-upload-form-view">
 
           <label class="woven-upload-picker">
-            <input id="woven-image-input" type="file" accept="image/*">
+            <input
+              id="woven-image-input"
+              type="file"
+              accept="image/*"
+            >
             <span>Choose Image</span>
           </label>
 
@@ -105,7 +71,14 @@
               Threshold
             </label>
 
-            <input id="woven-threshold-slider" class="woven-slider" type="range" min="0" max="255" value="128">
+            <input
+              id="woven-threshold-slider"
+              class="woven-slider"
+              type="range"
+              min="0"
+              max="255"
+              value="128"
+            >
           </div>
 
           <button id="woven-submit-button" class="button button-red woven-submit-button" type="button">
@@ -127,7 +100,7 @@
           </h2>
 
           <p class="woven-success-message">
-            Your image will be reviewed and then entered into the loom on the <em>Woven</em> page.
+            Your image has entered the loom.
           </p>
         </div>
 
@@ -139,10 +112,9 @@
   <div id="site-footer"></div>
 
   <!-- ========================= SCRIPTS ========================= -->
-  <script src="/js/includes.js"></script>
+    <script src="/js/includes.js"></script>
   <script src="/js/global.js"></script>
   <script src="/js/woven_base.js"></script>
 
 </body>
-
 </html>

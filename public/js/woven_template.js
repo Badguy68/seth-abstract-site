@@ -3,8 +3,7 @@
 ========================================================= */
 
 const WOVEN_WEBHOOK_URL = "https://hook.us2.make.com/12f9afxunyvlepuxj18hf5tngolhmx0y";
-const WOVEN_FEEDBACK_WEBHOOK_URL = "https://hook.us2.make.com/n8y9imf4amo56qyac6bv56xsmbrt1ijb";
-const WOVEN_STORAGE_KEY = "wovenUploadSubmitted-base";
+const WOVEN_STORAGE_KEY = "wovenUploadSubmitted";
 
 const CANVAS_SIZE = 700;
 
@@ -56,7 +55,7 @@ function hasAlreadySubmitted() {
 }
 
 function saveSuccessfulSubmission() {
-  localStorage.setItem(WOVEN_STORAGE_KEY, "true");
+  //localStorage.setItem(WOVEN_STORAGE_KEY, "true");
 }
 
 function showSuccessView() {
@@ -231,110 +230,11 @@ async function handleSubmit() {
 }
 
 
-
-
-
-
-
-
-/* =========================================================
-   FEEDBACK FORM
-========================================================= */
-
-function getFeedbackForm() {
-  return document.getElementById("woven-feedback-form");
-}
-
-function getFeedbackMessage() {
-  return document.getElementById("woven-feedback-message");
-}
-
-function getFeedbackEmail() {
-  return document.getElementById("woven-feedback-email");
-}
-
-function getFeedbackStatus() {
-  return document.getElementById("woven-feedback-status");
-}
-
-function buildFeedbackPayload() {
-  return {
-    createdAt: new Date().toISOString(),
-    source: "wovenuploadbase-feedback",
-    message: getFeedbackMessage().value.trim(),
-    email: getFeedbackEmail().value.trim()
-  };
-}
-
-async function sendFeedbackToWebhook(payload) {
-  const response = await fetch(WOVEN_FEEDBACK_WEBHOOK_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(payload)
-  });
-
-  if (!response.ok) {
-    throw new Error("Feedback webhook failed.");
-  }
-
-  return response;
-}
-
-async function handleFeedbackSubmit(event) {
-  event.preventDefault();
-
-  const messageField = getFeedbackMessage();
-  const emailField = getFeedbackEmail();
-  const status = getFeedbackStatus();
-  const submitButton = document.querySelector(".woven-feedback-button");
-
-  const message = messageField.value.trim();
-
-  if (message.length < 3) {
-    status.textContent = "write a little more feedback before submitting!";
-    return;
-  }
-
-  try {
-    submitButton.disabled = true;
-    submitButton.textContent = "Sending...";
-    status.textContent = "";
-
-    const payload = buildFeedbackPayload();
-
-    await sendFeedbackToWebhook(payload);
-
-    messageField.value = "";
-    emailField.value = "";
-
-    status.textContent = "received. thank you.";
-  } catch (error) {
-    console.error(error);
-    status.textContent = "something failed. try again.";
-  } finally {
-    submitButton.disabled = false;
-    submitButton.textContent = "Send Feedback";
-  }
-}
-
-function initializeFeedbackForm() {
-  const form = getFeedbackForm();
-
-  if (!form) return;
-
-  form.addEventListener("submit", handleFeedbackSubmit);
-}
-
-
 /* =========================================================
    INITIALIZE
 ========================================================= */
 
 function initializeWovenUploadBase() {
-  initializeFeedbackForm();
-
   if (hasAlreadySubmitted()) {
     showSuccessView();
     return;
