@@ -77,7 +77,7 @@
     <section class="abstract-section weekly-dispatch">
       <div class="section-heading">
         <h2>Weekly Dispatch</h2>
-        <p>Art and thoughts from the current week. Some things may become public, some will be gone after a week.</p>
+        <p><em>Art and thoughts from the current week. Some things may become public, some will be gone after a week.</em></p>
       </div>
 
       <article id="weekly-post" class="weekly-post">
@@ -93,19 +93,18 @@
 
       <div class="voices-grid">
         <article>
-          <span class="voice-label">Thought</span>
+          <span class="voice-label">Thought from The Abstract</span>
           <p id="community-thought"></p>
         </article>
 
         <article>
-          <span class="voice-label">Poem</span>
+          <span class="voice-label">Poem from The Abstract</span>
           <div id="community-poem" class="poem-block"></div>
         </article>
 
         <article>
-          <span class="voice-label">Artwork</span>
-          <img id="community-artwork" src="" alt="Community artwork">
-          <p id="community-artwork-caption"></p>
+          <span class="voice-label">Poem by Seth Abstract</span>
+          <div id="self-poem" class="poem-block"></div>
         </article>
       </div>
     </section>
@@ -113,7 +112,7 @@
     <section class="abstract-section submit-section">
       <div class="section-heading">
         <h2>Submit to the Abstract</h2>
-        <p>Send something honest. A thought, poem, artwork, or idea for a song.</p>
+        <p>I read all submissions. Send you ideas, writing, questions, and opinions! They mean a lot. Some thoughts and poems will be displayed.</p>
       </div>
 
       <form id="abstract-submit-form">
@@ -123,24 +122,14 @@
             <option value="">Choose one</option>
             <option value="thought">Thought</option>
             <option value="poem">Poem</option>
-            <option value="artwork">Artwork</option>
-            <option value="song idea">Song adaptation idea</option>
+            <option value="artwork">Question</option>
+            <option value="song idea">Idea</option>
           </select>
         </label>
 
         <label>
           Your Submission
           <textarea name="message" rows="7" required></textarea>
-        </label>
-
-        <label>
-          Email Optional
-          <input type="email" name="email">
-        </label>
-
-        <label>
-          Name / Handle Optional
-          <input type="text" name="handle">
         </label>
 
         <button type="submit">Send to the Archive</button>

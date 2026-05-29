@@ -38,8 +38,7 @@ function loadAbstractWeek() {
 
   document.getElementById("community-thought").textContent = post.voices.thought;
   document.getElementById("community-poem").innerHTML = post.voices.poem;
-  document.getElementById("community-artwork").src = post.voices.artwork;
-  document.getElementById("community-artwork-caption").textContent = post.voices.artworkCaption;
+  document.getElementById("self-poem").innerHTML = post.voices.poemSelf;
 }
 
 /* =========================================================
@@ -47,7 +46,7 @@ function loadAbstractWeek() {
    Replace WEBHOOK_URL with your Make webhook.
 ========================================================= */
 
-const ABSTRACT_WEBHOOK_URL = "PASTE_MAKE_WEBHOOK_URL_HERE";
+const ABSTRACT_WEBHOOK_URL = "https://hook.us2.make.com/yls82e8g8aq2mwnujx44q8lcrc3uii4j";
 
 function setupAbstractForm() {
   const form = document.getElementById("abstract-submit-form");
@@ -63,10 +62,7 @@ function setupAbstractForm() {
 
     const payload = {
       type: formData.get("type"),
-      message: formData.get("message"),
-      email: formData.get("email"),
-      handle: formData.get("handle"),
-      page: "The Abstract"
+      message: formData.get("message")
     };
 
     try {

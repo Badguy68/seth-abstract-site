@@ -195,11 +195,10 @@ body{
 }
 
 .weekly-post img {
-  width: 100%;
+  width: auto;
   display: block;
   margin-top: 26px;
   border: 1px solid rgba(255, 255, 255, 0.78);
-  filter: grayscale(100%);
 }
 
 .weekly-post figure {
