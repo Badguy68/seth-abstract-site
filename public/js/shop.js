@@ -4,6 +4,7 @@ let currentShopCategory = "album";
 const cartState = {};
 let currentModalProductID = null;
 let currentModalSide = "front";
+let activeDiscountPercent = 0;
 
 //===================LOADING CARDS AND TABS=====================================
 //Create each product card and add to page based on product info
@@ -78,7 +79,7 @@ function initializeShopTabs() {
 function initializeShopPage() {
   initializeShopTabs();
   initializeShopGridEvents();
-  applySecretCardFromUrl()
+  applySecretCardFromUrl();
   renderShopProducts(currentShopCategory);
   updateCartUI();
   initializeShopModalEvents();
@@ -128,7 +129,11 @@ function getCartSubtotal() {
 }
 
 function getCartDiscountAmount() {
-  return 0;
+  if(activeDiscountPercent <= 0) {
+    return 0;
+  }
+
+  return getCartSubtotal() * (activeDiscountPercent / 100);
 }
 
 function getCartTotal() {
@@ -148,8 +153,16 @@ function updateCartUI() {
   const totalAmount = getCartTotal();
 
   cartCountElement.textContent = `${itemCount} item${itemCount === 1 ? "" : "s"}`;
-  cartDiscountElement.textContent = `Discount: $${discountAmount.toFixed(2)}`;
   cartTotalElement.textContent = `Total: $${totalAmount.toFixed(2)}`;
+
+  //Deal with discount showing amount or being hidden etc
+  if (activeDiscountPercent > 0) {
+    cartDiscountElement.textContent = `Discount (${activeDiscountPercent}%): $${discountAmount.toFixed(2)}`;
+    cartDiscountElement.style.display = "";
+  } else {
+    cartDiscountElement.textContent = "";
+    cartDiscountElement.style.display = "none";
+  }
 }
 
 //After something changed totally refresh UI and products
@@ -302,13 +315,15 @@ function buildOrderPayload() {
     createdAt: new Date().toISOString(),
     email,
     marketingOptIn,
-    items: getCartItemsDetailed()
+    items: getCartItemsDetailed(),
+    discountPercent: activeDiscountPercent
   };
 }
 
 function renderCheckoutOverlay() {
   const checkoutItemsElement = document.getElementById("shop-checkout-items");
   const checkoutItemCountElement = document.getElementById("shop-checkout-item-count");
+  const checkoutDiscountElementText = document.getElementById("shop-checkout-discount-text");
   const checkoutDiscountElement = document.getElementById("shop-checkout-discount");
   const checkoutTotalElement = document.getElementById("shop-checkout-total");
 
@@ -335,6 +350,7 @@ function renderCheckoutOverlay() {
   }
 
   checkoutItemCountElement.textContent = itemCount;
+  checkoutDiscountElementText.textContent = activeDiscountPercent > 0 ? `Discount (${activeDiscountPercent}%)` : "Discount";
   checkoutDiscountElement.textContent = `$${discount.toFixed(2)}`;
   checkoutTotalElement.textContent = `$${total.toFixed(2)}`;
 }
@@ -424,11 +440,16 @@ async function handleCheckoutSubmit() {
 //===================PAGE INITIALIZATION=====================================
 
 function applySecretCardFromUrl() {
+  //Check if came from secret page
   const params = new URLSearchParams(window.location.search);
-
+  
   if (params.get("gated") !== "true") return;
 
+  //Add secret card to cart
   setProductQuantity("thekey", 1);
+
+  //Add Discount
+  activeDiscountPercent = 10;
 
   window.history.replaceState({}, "", "/shop/");
 }
