@@ -27,6 +27,22 @@ const ABSTRACT_POSTS = {
         <img src="/intheabstract/media/snail_drawing.jpg" alt="Snail Drawing">
         <figcaption>Random drawing haha</figcaption>
       </figure>
+
+      <div class="audio-entry">
+    <button class="audio-button">
+        ▶
+    </button>
+
+    <div class="audio-info">
+        <div class="audio-title">
+            The River Demo
+        </div>
+        <div class="audio-time">
+            0:48
+        </div>
+    </div>
+    <audio src="/intheabstract/media/audio/The River Demo.mp3"></audio>
+   </div>
     `,
 
     voices: {
