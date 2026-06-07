@@ -36,14 +36,13 @@ function loadAbstractWeek() {
 
   document.getElementById("weekly-post").innerHTML = post.blogHtml;
 
-  document.getElementById("community-thought").textContent = post.voices.thought;
+  document.getElementById("community-thought").innerHTML = post.voices.thought;
   document.getElementById("community-poem").innerHTML = post.voices.poem;
   document.getElementById("self-poem").innerHTML = post.voices.poemSelf;
 }
 
 /* =========================================================
    SUBMISSION FORM
-   Replace WEBHOOK_URL with your Make webhook.
 ========================================================= */
 
 const ABSTRACT_WEBHOOK_URL = "https://hook.us2.make.com/yls82e8g8aq2mwnujx44q8lcrc3uii4j";
@@ -91,11 +90,83 @@ function setupAbstractForm() {
 }
 
 /* =========================================================
+   AUDIO PLAYERS
+========================================================= */
+
+function setupAudioPlayers() {
+
+    // Setup end behavior
+    document.querySelectorAll(".audio-entry audio").forEach(audio => {
+
+        audio.addEventListener("ended", () => {
+
+            // Return to beginning
+            audio.currentTime = 0;
+
+            // Pause
+            audio.pause();
+
+            // Restore play icon
+            const button = audio
+                .closest(".audio-entry")
+                .querySelector(".audio-button");
+
+            button.textContent = "▶";
+        });
+
+    });
+
+    // Handle play/pause clicks
+    document.addEventListener("click", function (e) {
+
+        if (!e.target.classList.contains("audio-button")) return;
+
+        const entry = e.target.closest(".audio-entry");
+
+        const audio = entry.querySelector("audio");
+
+        if (audio.paused) {
+
+            // Pause all other players
+            document.querySelectorAll(".audio-entry audio").forEach(a => {
+
+                if (a !== audio) {
+
+                    a.pause();
+                    a.currentTime = 0;
+
+                    const otherButton = a
+                        .closest(".audio-entry")
+                        .querySelector(".audio-button");
+
+                    otherButton.textContent = "▶";
+                }
+
+            });
+
+            // Play current audio
+            audio.play();
+
+            e.target.textContent = "❚❚";
+
+        } else {
+
+            audio.pause();
+
+            e.target.textContent = "▶";
+        }
+
+    });
+
+}
+
+/* =========================================================
    INIT
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
   loadAbstractWeek();
   setupAbstractForm();
+  setupAudioPlayers();
   cleanAbstractUrl();
 });
