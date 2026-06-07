@@ -62,15 +62,8 @@ showLayer(0);
    ========================================================= */
 
 const heroImageElements = document.querySelectorAll(".hero-grid-image");
-
-const heroImages = [
-  "./home_assets/hero_images/img1.png",
-  "./home_assets/hero_images/img2.png",
-  "./home_assets/hero_images/img3.png",
-  "./home_assets/hero_images/img4.png",
-  "./home_assets/hero_images/img5.png",
-  "./home_assets/hero_images/img6.png"
-];
+const heroImagesTotal = 22;
+const heroImageBasePath = "./home_assets/hero_images/img";
 
 const heroImageIntervals = [450, 320, 415, 210, 300];
 //const heroImageIntervals = [280, 190, 150, 210, 300];
@@ -79,17 +72,18 @@ let heroImageTimers = [];
 
 function setInitialHeroImages() {
   heroImageElements.forEach((img, i) => {
-      img.src = heroImages[i];
+      img.src = heroImageBasePath + (i + 1) + ".png";
   });
 }
 
 function getRandomHeroImage(currentSrc) {
   const currentFile = currentSrc.split("/").pop();
-  const randomIndex = Math.floor(Math.random() * heroImages.length);
+  const randomIndex = Math.floor(Math.random() * heroImagesTotal);
+  const path = heroImageBasePath + (randomIndex + 1) + ".png";
   
-  if (heroImages[randomIndex].split("/").pop() == currentFile) {return getRandomHeroImage(currentSrc);}
+  if (path.split("/").pop() == currentFile) {return getRandomHeroImage(currentSrc);}
   
-  return heroImages[randomIndex];
+  return path;
 }
 
 let imageIndex = 0;

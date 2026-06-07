@@ -2,7 +2,7 @@
    WOVEN GALLERY
 ========================================================= */
 
-const TOTAL_IMAGES = 7;
+const TOTAL_IMAGES = 22;
 const IMAGE_FOLDER = "/home_assets/hero_images/";
 const IMAGE_EXTENSION = ".png";
 
