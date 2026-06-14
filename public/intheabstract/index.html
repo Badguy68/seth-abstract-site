@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,15 @@
 
   <!-- ========================= TRACKING ========================= -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB7LTYMNQJ"></script>
-  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NB7LTYMNQJ');</script>
- 
+  <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-NB7LTYMNQJ');</script>
+
   <!-- ========================= FONTS ========================= -->
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap"
+    rel="stylesheet">
 
   <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/ugg8kvv.css">
@@ -74,10 +77,25 @@
 
     </section>
 
+    <section class="abstract-section video-section">
+      <div class="section-heading compact-heading">
+        <h2>Video Update</h2>
+        <p id="video-note-title"></p>
+      </div>
+
+      <div class="video-frame">
+        <iframe id="weekly-video" src="" title="Weekly video note" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
     <section class="abstract-section weekly-dispatch">
       <div class="section-heading">
         <h2>Weekly Dispatch</h2>
-        <p><em>Art and thoughts from the current week. Some things may become public, some will be gone after a week.</em></p>
+        <p><em>Art from the current week. Some things may become public, some will be gone forever after a
+            week.</em></p>
       </div>
 
       <article id="weekly-post" class="weekly-post">
@@ -112,7 +130,8 @@
     <section class="abstract-section submit-section">
       <div class="section-heading">
         <h2>Submit to the Abstract</h2>
-        <p>I read all submissions. Send your ideas, writing, questions, and opinions! They mean a lot. Some thoughts and poems will be displayed.</p>
+        <p>I read all submissions. Send your ideas, writing, questions, and opinions! They mean a lot. Some thoughts and
+          poems will be displayed.</p>
       </div>
 
       <form id="abstract-submit-form">
@@ -147,10 +166,11 @@
   <div id="site-footer"></div>
 
   <!-- ========================= SCRIPTS ========================= -->
-    <script src="/js/includes.js"></script>
+  <script src="/js/includes.js"></script>
   <script src="/js/global.js"></script>
   <script src="/js/intheabstract.js"></script>
   <script src="/js/intheabstractposts.js"></script>
 
 </body>
+
 </html>

@@ -28,6 +28,10 @@ function loadAbstractWeek() {
   document.getElementById("archive-week").textContent = post.weekNumber;
   document.getElementById("archive-updated").textContent = post.updated;
 
+document.getElementById("video-note-title").textContent = post.video.title;
+document.getElementById("weekly-video").src =
+  `https://www.youtube.com/embed/${post.video.youtubeId}`;
+
   document.getElementById("song-cover").src = post.currentListening.cover;
   document.getElementById("song-title").textContent = post.currentListening.title;
   document.getElementById("song-artist").textContent = post.currentListening.artist;

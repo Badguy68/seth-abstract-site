@@ -174,6 +174,37 @@ body{
 }
 
 /* =========================================================
+   VIDEO NOTE
+========================================================= */
+
+.video-section {
+  padding: clamp(18px, 4vw, 30px);
+}
+
+.compact-heading {
+  margin-bottom: 18px;
+}
+
+.video-frame {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+
+  border: 1px solid rgba(255, 255, 255, 0.78);
+
+  aspect-ratio: 16 / 9;
+
+  background: #000;
+  overflow: hidden;
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* =========================================================
    BLOG POST
 ========================================================= */
 

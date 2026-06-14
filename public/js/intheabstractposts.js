@@ -1,4 +1,4 @@
-const CURRENT_ABSTRACT_WEEK = "week-002";
+const CURRENT_ABSTRACT_WEEK = "week-003";
 
 const ABSTRACT_POSTS = {
   "BASE WEEK": {
@@ -13,6 +13,11 @@ const ABSTRACT_POSTS = {
     },
 
     fragment: "",
+
+    video: {
+      title: "",
+      youtubeId: ""
+    },
 
     blogHtml: `
       <h3>The first transmission</h3>
@@ -58,6 +63,70 @@ const ABSTRACT_POSTS = {
       `
     }
   }, // end of base week
+
+  "week-003": {
+    weekNumber: "003",
+    updated: "June 14, 2026",
+    witnessCount: "14",
+
+    currentListening: {
+      title: "Siddhartha",
+      artist: "Jesse Welles",
+      cover: "/intheabstract/media/album_cover.jpg"
+    },
+
+    fragment: "GO OUTSIDE AND MEET PEOPLE, IT WILL CHANGE YOUR LIFE",
+
+    video: {
+      title: "New secret video for updates and a new single",
+      youtubeId: "yzISrw4UCqQ"
+    },
+
+    blogHtml: `
+      <h3>'The Ballad of Davina Larose' Sneak Peek</h3>
+
+      <div class="audio-entry">
+    <button class="audio-button">
+        ▶
+    </button>
+
+    <div class="audio-info">
+        <div class="audio-title">
+            The Ballad of Davina Larose - Part 1
+        </div>
+        <div class="audio-time">
+            0:48
+        </div>
+    </div>
+    <audio src="/intheabstract/media/audio/The Ballad of Davina Larose - Part 1.mp3"></audio>
+   </div>
+    `,
+
+    voices: {
+      thought: `
+      <p>A Message for The Architect,</p>
+<br>
+<p>At the moment of sending this message, as judged by the scrawls upon the walls left by previous souls, I suspect that I am Witness #12 to earn passage beyond The Gate.</p>
+<p>I have today received my reward for solving the first puzzle, which was lovely; excellent marbling in the wax seal on the envelope, by the way.</p>
+<p>I have provided my contribution to The Woven, for such is the first step on the Path, and I hope it brings joy, curiosity, and wonder unto future Witnesses.</p>
+<p>I await, with bated breath, future insights and discoveries from your mystical world, and perhaps the possibility to impart my own marks upon it as well.</p>
+<br>
+<p>Stay safe, stay sane, stay Abstract,</p>
+<br>
+<p>Sincerely,</p>
+<p>Witness #12</p>
+<br>
+<p>P.S. Rest In Power, Davina LaRose.</p>
+`,
+      poem: `Awaiting...`,
+      poemSelf: `
+      <p>18 July 2022</p>
+    <p>Ocean waves peel back,</p>
+    <p>Unmasking angel winged fish</p>
+    <p>Floating to new blues.</p>
+      `
+    }
+  },
 
   "week-002": {
     weekNumber: "002",
