@@ -2,6 +2,8 @@
 // git commit -m "message"
 // git push
 
+const heroImagesTotal = 24;
+
 /* =========================================================
    HERO FONT ROTATION
    Purpose: Rotates the Seth Abstract display font
@@ -62,7 +64,6 @@ showLayer(0);
    ========================================================= */
 
 const heroImageElements = document.querySelectorAll(".hero-grid-image");
-const heroImagesTotal = 22;
 const heroImageBasePath = "./home_assets/hero_images/img";
 
 const heroImageIntervals = [450, 320, 415, 210, 300];

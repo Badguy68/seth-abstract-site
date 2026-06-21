@@ -1,4 +1,4 @@
-const CURRENT_ABSTRACT_WEEK = "week-003";
+const CURRENT_ABSTRACT_WEEK = "week-004";
 
 const ABSTRACT_POSTS = {
   "BASE WEEK": {
@@ -63,6 +63,55 @@ const ABSTRACT_POSTS = {
       `
     }
   }, // end of base week
+
+  "week-004": {
+    weekNumber: "004",
+    updated: "June 21, 2026",
+    witnessCount: "14",
+
+    currentListening: {
+      title: "EVERYTHING I'VE EVER WANTED",
+      artist: "Tiffany Day",
+      cover: "/intheabstract/media/album_cover.jpg"
+    },
+
+    fragment: "The day does not have enough time. You always have to give something up.",
+
+    video: {
+      title: "Lazy Week before Crazy Week",
+      youtubeId: "2-Mype5vl7M"
+    },
+
+    blogHtml: `
+      <h3>Album Art for The CRASH</h3>
+      <p>The album art for my very first fully self-written song that came out before the album. Trying to decide if I should release it as a postcard.</p>
+      <figure>
+        <img src="/intheabstract/media/The_CRASH_cover.jpg" alt="The CRASH Cover">
+        <figcaption>It is made up of images of me and my amazing girlfriend.</figcaption>
+      </figure>
+    `,
+
+    voices: {
+      thought: `<p>Hi. I have followed this whole thing from the moment "raven" came out. I have loved it! I started following on tiktok then went to insta. Finally went to the website and I got stuck. Could not figure out the hidden words. Gave up. Told my husband. He looked. We figured it out, I was so happy. Bought the hidden postcard. Waited and waited and it finally turned up. Im so happy. The wax seal on the envelope!!!! This whole journey has had everything. Excited, frustration.. everything. I love what you do and I wanted to let you know that you have made me smile</p>
+      <br><p><em>(Seth Abstract: Thank you so much for the kind words. It is so special to me to be able to share these crazy ideas with people who actually enjoy them. Means a lot.)</em></p>`,
+      poem: `
+<p>Poem about waiting for the hidden card to arrive</p>
+<br>
+<p>I counted shadows on the wall,</p>
+<p>And fed my hope to sleepless nights.</p>
+<p>Each passing hour felt cold and small,</p>
+<p>A lantern dimmed for absent lights.</p>
+<p>Then at my door, with quiet grace,</p>
+<p>Came what I'd begged the dark to bring.</p>
+<p>I smiled, though tears ran down my face,</p>
+<p>For even joy has haunted wings.</p>`,
+      poemSelf: `
+      <p>8 July 2022</p>
+<p>At last! The green plains,</p>
+<p>Light has never seemed so bright!</p>
+<p>Abandon all hope!</p>`
+    }
+  },
 
   "week-003": {
     weekNumber: "003",
