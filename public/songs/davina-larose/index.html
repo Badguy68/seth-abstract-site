@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Seth Abstract</title>
+
+  <!-- ========================= TRACKING ========================= -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB7LTYMNQJ"></script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NB7LTYMNQJ');</script>
+  
+  <!-- ========================= FONTS ========================= -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/ugg8kvv.css">
+
+  <!-- ========================= STYLES ========================= -->
+  <!-- Global Design System -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/layout.css">
+
+  <!-- Page-Specific Styles -->
+  <link rel="stylesheet" href="/css/songs.css">
+
+  <!-- Custom page CSS: add a few small overrides here -->
+  <style>
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.audio-page-content {
+    width: min(700px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.audio-entry {
+    width: 100%;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.02);
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    transition: .25s ease;
+}
+
+.audio-description {
+    margin: 0;
+    max-width: 620px;
+    color: rgba(255,255,255,.7);
+    font-size: .95rem;
+    line-height: 1.6;
+}
+
+/* AUDIO PLAYER */
+
+.audio-entry {
+    width: min(700px, 100%);
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.02);
+
+    padding: 18px 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    border-radius: 10px;
+    transition: .25s ease;
+}
+
+.audio-entry:hover {
+    background: rgba(255,255,255,.04);
+    border-color: rgba(255,255,255,.35);
+}
+
+.audio-button {
+    width: 48px;
+    height: 48px;
+
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.7);
+
+    color: white;
+    font-size: 1rem;
+
+    cursor: pointer;
+    flex-shrink: 0;
+
+    transition: .2s ease;
+}
+
+.audio-button:hover {
+    background: white;
+    color: black;
+}
+
+.audio-info {
+    flex: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.audio-title {
+    font-size: .95rem;
+    letter-spacing: .06em;
+}
+
+.audio-time {
+    color: rgba(255,255,255,.55);
+    font-size: .9rem;
+    white-space: nowrap;
+}
+
+.audio-entry audio {
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    .audio-entry {
+        padding: 16px;
+    }
+
+    .audio-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .audio-time {
+        font-size: .85rem;
+    }
+
+}
+
+  </style>
+</head>
+
+<body data-active-page>
+
+  <!-- ========================= NAVIGATION ========================= -->
+  <div id="site-header"></div>
+
+  <!-- ========================= MAIN CONTENT ========================= -->
+  <main>
+    <section class="audio-page-content">
+<div class="audio-entry">
+    <button class="audio-button">
+        ▶
+    </button>
+
+    <div class="audio-info">
+        <div class="audio-title">
+            The Ballad of Davina Larose
+        </div>
+        <div class="audio-time">
+            0:48
+        </div>
+    </div>
+    <audio src="./davina-larose-rough.wav"></audio>
+   </div>
+
+   <p>This is the song at about 90% done! Still a few changes to make and some mastering but this is very close to the release version. Hope you like it :D</p>
+</section>  
+</main>
+
+  <!-- ========================= FOOTER ========================= -->
+  <div id="site-footer"></div>
+
+  <!-- ========================= SCRIPTS ========================= -->
+    <script src="/js/includes.js"></script>
+  <script src="/js/global.js"></script>
+  <script>
+    /* =========================================================
+   AUDIO PLAYERS
+========================================================= */
+
+function setupAudioPlayers() {
+
+    // Setup end behavior
+    document.querySelectorAll(".audio-entry audio").forEach(audio => {
+
+        audio.addEventListener("ended", () => {
+
+            // Return to beginning
+            audio.currentTime = 0;
+
+            // Pause
+            audio.pause();
+
+            // Restore play icon
+            const button = audio
+                .closest(".audio-entry")
+                .querySelector(".audio-button");
+
+            button.textContent = "▶";
+        });
+
+    });
+
+    // Handle play/pause clicks
+    document.addEventListener("click", function (e) {
+
+        if (!e.target.classList.contains("audio-button")) return;
+
+        const entry = e.target.closest(".audio-entry");
+
+        const audio = entry.querySelector("audio");
+
+        if (audio.paused) {
+
+            // Pause all other players
+            document.querySelectorAll(".audio-entry audio").forEach(a => {
+
+                if (a !== audio) {
+
+                    a.pause();
+                    a.currentTime = 0;
+
+                    const otherButton = a
+                        .closest(".audio-entry")
+                        .querySelector(".audio-button");
+
+                    otherButton.textContent = "▶";
+                }
+
+            });
+
+            // Play current audio
+            audio.play();
+
+            e.target.textContent = "❚❚";
+
+        } else {
+
+            audio.pause();
+
+            e.target.textContent = "▶";
+        }
+
+    });
+
+}
+    setupAudioPlayers();
+
+  </script>
+
+</body>
+</html>

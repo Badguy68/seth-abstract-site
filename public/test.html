@@ -1,0 +1,81 @@
+<!-- PULL URL PARAMS AND SET IN LOCAL STORAGE -->
+<script>
+    const queryString = window.location.search.substring(1); // Get the query string part of the URL, excluding the initial '?'
+    const urlParams = new URLSearchParams(queryString); // Create a URLSearchParams object from the query string
+    
+    setParam('source', 'source');
+    setParam('coupon', 'coupon');
+    
+    // Check if the stored parameters are older than 30 days; if so, clear them.
+    clearOldTracking('source');
+    clearOldTracking('coupon');
+    
+    // Function to save the parameter and its timestamp
+    function setParam(paramID, paramName){
+        const param = urlParams.get(paramID);
+        
+        if (param != null) {
+            localStorage.setItem(paramName, param);
+            
+            // Store the current date in ISO format
+            localStorage.setItem(paramName + '_date', new Date().toISOString());
+        }
+    }
+    
+    
+    // Function to clear parameters if the stored date is older than 30 days
+    function clearOldTracking(paramName) {
+        const storedDate = localStorage.getItem(paramName + '_date');
+        if (storedDate) {
+            const then = new Date(storedDate);
+            const now = new Date();
+            // Calculate the difference in milliseconds (30 days)
+            const thirtyDays = 30  * 24 * 60 * 60 * 1000;
+            if (now - then > thirtyDays) {
+                localStorage.removeItem(paramName);
+                localStorage.removeItem(paramName + '_date');
+            }
+        }
+    }
+    
+</script>
+
+<!-- SET RESERVE BUTTON VARS -->
+<script>
+    
+    //const reserveButton = document.getElementsByClassName('reserveButton');
+
+    const reserveButton = Array.from(document.querySelectorAll('a'))
+    .filter(link => link.href.includes('app.acuityscheduling.com'));
+    
+    if(reserveButton.length > 0){
+        let finalURLAddon = "";
+    
+        addToLink('source', 'field:15267193');
+        addToLink('coupon', 'certificate');
+    
+        function addToLink(storageID, linkParam){
+            const value = localStorage.getItem(storageID);
+        
+            if(value != null){
+                const urlAddon = "&" + linkParam + "=" + value;
+        
+                finalURLAddon += urlAddon;
+            }
+        }
+    
+        Array.from(reserveButton).forEach(function(rb) {
+            rb.href += finalURLAddon;
+            
+            //Meta tracker
+            rb.addEventListener('click', function() {
+                //Check if already tracked once for the user
+                if(localStorage.getItem("clickedReserve") !== "true"){
+                    // Track the StartCheckout event meta
+                    fbq('track', 'InitiateCheckout');
+                    localStorage.setItem("clickedReserve", "true");
+                }
+            });
+        });
+    }
+</script>
