@@ -46,6 +46,7 @@ async function handlePresaveSubmit(event) {
   const email = emailInput.value.trim();
 
   if (!email) {
+    message.style.display = "block";
     message.textContent = "enter your email first";
     return;
   }
@@ -58,9 +59,11 @@ async function handlePresaveSubmit(event) {
     await sendPresaveToWebhook(buildPresavePayload());
 
     emailInput.value = "";
+    message.style.display = "block";
     message.textContent = "received. thank you.";
   } catch (error) {
     console.error(error);
+    message.style.display = "block";
     message.textContent = "something failed. try again.";
   } finally {
     button.disabled = false;
