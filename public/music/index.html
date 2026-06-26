@@ -9,7 +9,7 @@
 
   <!-- ========================= TRACKING ========================= -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB7LTYMNQJ"></script>
-  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NB7LTYMNQJ');</script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-NB7LTYMNQJ');</script>
 
   <!-- ========================= FONTS ========================= -->
   <!-- Google Fonts -->
@@ -35,7 +35,7 @@
 <body data-active-page="music">
 
   <!-- ========================= NAVIGATION ========================= -->
-   <p class="small-keyword">secret keyword: intent</p>
+  <p class="small-keyword">secret keyword: intent</p>
   <div id="site-header"></div>
 
   <!-- ========================= MAIN CONTENT ========================= -->
@@ -43,6 +43,28 @@
 
     <section class="section music-portal">
       <div class="music-portal-inner">
+
+        <!-- Presave / Mailing List -->
+        <section class="music-presave">
+          <h2 class="music-presave-title">
+            Presave "The Ballad of Davina Larose"
+          </h2>
+
+          <p class="music-presave-desc">
+            Be the first to hear about new tracks and major updates!
+          </p>
+
+          <form id="music-presave-form" class="music-presave-form">
+            <input id="music-presave-email" class="music-presave-input" type="email" placeholder="you@example.com"
+              required>
+
+            <button class="button button-red music-presave-button" type="submit">
+              Submit
+            </button>
+          </form>
+
+          <p id="music-presave-message" class="music-presave-message"></p>
+        </section>
 
         <!-- Album Art -->
         <figure class="music-cover">
@@ -53,7 +75,8 @@
         <div class="music-meta">
           <h1 class="music-title">The Living Archive</h1>
           <p class="music-artist">Seth Abstract</p>
-          <p class="text-desc">The ultimate poetry album with 10 tracks based on some of the most famous poems of all time!</p>
+          <p class="text-desc">The ultimate poetry album with 10 tracks based on some of the most famous poems of all
+            time!</p>
         </div>
 
 
@@ -107,7 +130,8 @@
     </section>
 
     <div class="platform-note">
-      If your listening platform isn't listed just search up 'The Living Archive' by Seth Abstract. The album is on most music platforms :) 
+      If your listening platform isn't listed just search up 'The Living Archive' by Seth Abstract. The album is on most
+      music platforms :)
     </div>
 
   </main>
@@ -116,14 +140,15 @@
   <div id="site-footer"></div>
 
   <!-- ========================= SCRIPTS ========================= -->
-   <script src="/js/includes.js"></script>
+  <script src="/js/includes.js"></script>
   <script src="../js/global.js"></script>
+  <script src="/js/music.js"></script>
 
   <!-- ==== Auto Scroll for Keyword ==== -->
   <script>
     window.addEventListener("load", () => {
       document.querySelector(".small-keyword").style.display = "flex";
-      window.scrollTo(0, document.getElementById("site-header").offsetTop);
+      //window.scrollTo(0, document.getElementById("site-header").offsetTop);
     });
   </script>
 </body>
