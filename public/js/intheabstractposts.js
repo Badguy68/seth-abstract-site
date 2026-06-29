@@ -1,4 +1,4 @@
-const CURRENT_ABSTRACT_WEEK = "week-004";
+const CURRENT_ABSTRACT_WEEK = "week-005";
 
 const ABSTRACT_POSTS = {
   "BASE WEEK": {
@@ -50,6 +50,8 @@ const ABSTRACT_POSTS = {
    </div>
     `,
 
+    
+
     voices: {
       thought: "",
       poem: `
@@ -63,6 +65,123 @@ const ABSTRACT_POSTS = {
       `
     }
   }, // end of base week
+
+  "week-005": {
+    weekNumber: "005",
+    updated: "June 29, 2026",
+    witnessCount: "15",
+
+    currentListening: {
+      title: "Suburban War",
+      artist: "Arcade Fire",
+      cover: "/intheabstract/media/album_cover.jpg"
+    },
+
+    fragment: "Pain comes before growth",
+
+    video: {
+      title: "One Day Late With Exciting Announcement!",
+      youtubeId: "TAtHbASTAwM"
+    },
+
+    blogHtml: `
+      <h3>Sorry for being one day late</h3>
+
+      <p>
+        To make up for it here is one minute of 'The Ballad of Davina Larose'
+      </p>
+
+      <div class="audio-entry">
+    <button class="audio-button">
+        ▶
+    </button>
+
+    <div class="audio-info">
+        <div class="audio-title">
+            The Ballad of Davina Larose
+        </div>
+        <div class="audio-time">
+            1:00
+        </div>
+    </div>
+    <audio src="/intheabstract/media/audio/Ballad of Davina Larose One Minute Sneak Peek.mp3"></audio>
+   </div>
+    `,
+
+    
+
+    voices: {
+      thought: "Awaiting...",
+      poem: `Awaiting...`,
+      poemSelf: `
+      <p>8/29/22 - Once upon a time</p>
+    <p>There was a feast to be had</p>
+<p>For all the beasts of the land!</p>
+
+<br>
+
+<p>From the pigs singing in mud,</p>
+<p>To the cows chewing their cud,</p>
+
+<br>
+
+<p>From the birds spinning in the sky,</p>
+<p>To the cats sleeping side by side,</p>
+
+<br>
+
+<p>From the wolves howling out names,</p>
+<p>To the humans playing their silly little games.</p>
+
+<br>
+
+<p>The dinner bell rings and</p>
+<p>They all sit down to eat.</p>
+<p>Around the table</p>
+<p>At their great big feast!</p>
+
+<br>
+
+<p>So begins the gnashing of teeth.</p>
+<p>The ripping of bloody meat.</p>
+
+<br>
+
+<p>Their sweating pores dripping</p>
+<p>As they crave more and more.</p>
+
+<br>
+
+<p>Consuming the dead, to power</p>
+<p>the living, until they are dead.</p>
+
+<br>
+
+<p>Their oily hairs trembling and falling</p>
+<p>As slick red stink drips down chins.</p>
+
+<br>
+
+<p>The great wide eyes of the beasts</p>
+<p>Bulging in their communion.</p>
+
+<br>
+
+<p>Matter absorbing matter.</p>
+<p>Mechanical cannibalism.</p>
+
+<br>
+
+<p>Them all terrifying, terrible, unpredictable</p>
+<p>Clumps of unyielding horror.</p>
+
+<br>
+
+<p>Them all brothers in</p>
+<p>Unholy pain.</p>
+      `
+    }
+  },
 
   "week-004": {
     weekNumber: "004",
