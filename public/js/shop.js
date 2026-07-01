@@ -1,6 +1,6 @@
 const SHOP_WEBHOOK_URL = "https://hook.us2.make.com/k53rdemx7o9jg7hcl19ye876vybexlhm";
 
-let currentShopCategory = "album";
+let currentShopCategory = "art";
 const cartState = {};
 let currentModalProductID = null;
 let currentModalSide = "front";

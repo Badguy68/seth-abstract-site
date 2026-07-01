@@ -1,6 +1,6 @@
 const shopTabDescriptions = {
   album: "Art prints based on the songs and poems from the album 'The Living Archive'! Click on a card to see it up close.",
-  art: "Standalone art prints coming soon..."
+  art: "Art prints showing the full album covers for my released singles! Click on a card to see it up close."
 };
 
 const shopProducts = [
@@ -90,7 +90,25 @@ const shopProducts = [
     square: "WP4PFIKPMCC3ZNFT6YIWZSTE"
   },
 
-  //GENERAL ART ----------------------------------------------
+  //SINGLES ART ----------------------------------------------
+  {
+    id: "theballadofdavinalarose",
+    name: "The Ballad of Davina Larose",
+    category: "art",
+    price: 9,
+    square: "ZOMQQNOVNIIQLZOET3DL6NUZ"
+  },
+
+  {
+    id: "thecrash",
+    name: "The CRASH",
+    category: "art",
+    price: 9,
+    square: "BLPVRWC7RL7GY3WC6BDU4BB5"
+  },
+
+
+  //SECRET ART ----------------------------------------------
 
   {
     id: "thekey",
