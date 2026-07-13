@@ -1,4 +1,4 @@
-const CURRENT_ABSTRACT_WEEK = "week-005";
+const CURRENT_ABSTRACT_WEEK = "week-007";
 
 const ABSTRACT_POSTS = {
   "BASE WEEK": {
@@ -65,7 +65,113 @@ const ABSTRACT_POSTS = {
       `
     }
   }, // end of base week
+"week-007": {
+    weekNumber: "007",
+    updated: "July 13th, 2026",
+    witnessCount: "15",
 
+    currentListening: {
+      title: "Jimmy's Gone Numb",
+      artist: "Sawyer Hill",
+      cover: "/intheabstract/media/album_cover.jpg"
+    },
+
+    fragment: "Art and success is made through moving with grace not strength.",
+
+    video: {
+      title: "BTS of filming the world of Davina Larose",
+      youtubeId: "HUwv630tFfk"
+    },
+
+    blogHtml: `
+      <h3>What has been happening</h3>
+
+      <p>
+        Sorry again everyone for the delay in updates! So much has been happening recently and hard to stay on top of it all. I want to share some of it with ya'll now though!
+      </p>
+      <p>
+      Somehow in the span of two or three weeks I am now working with a videographer, a branding consultant, a manager, and possibly getting a deal to work with Suno. This is just for the video side of things and not counting all the music people. It is so crazy and I am realizing how much there still is to learn and grow.
+      </p>
+      <p>
+      For the first time I am also trying to create a marketing campaign for a song that feels like a whole world instead of just a repeated format. I hope ya'll will be able to feel the story.
+      </p>
+      <p>
+      And somehow I need to already be working on my next song hahahha. I have no idea how to keep up with all this
+      </p>
+    `,
+
+    
+
+    voices: {
+      thought: "Please please please finish the anxiety song. The snippet on tiktok has me hooked. I seen your reply that it will take awhile and I will wait patiently for it! I love being able to write here directly to you (also love the Ballard of having larose! Can't wait to hear the full song and see all the artwork with it. <br> <em>(Seth Abstract: I hope you are enjoying the song! For sure that anxiety song will come out at some point. Might be a little while but I love it.)</em></b>)</p>",
+      poem: `<p>There was a time I called survival living,</p>
+<p>when every sunrise felt borrowed,</p>
+<p>and every smile carried the weight of apology.</p>
+<p>I learned to shrink myself</p>
+<p>until I could fit inside someone else's storms.</p>
+<p>I mistook silence for peace,</p>
+<p>fear for loyalty,</p>
+<p>and broken promises</p>
+<p>for hope dressed in different clothes.</p>
+<p>Then I walked away.</p>
+<p>The road behind me echoed with old names,</p>
+<p>old wounds,</p>
+<p>old ghosts that begged me to turn around.</p>
+<p>But with every trembling step,</p>
+<p>my heart remembered something forgotten.</p>
+<p>Freedom.</p>
+<p>And then... you.</p>
+<p>Not as a rescuer,</p>
+<p>for I had already saved myself,</p>
+<p>but as a gentle place to rest.</p>
+<p>You never asked me to become smaller.</p>
+<p>You never made me earn kindness.</p>
+<p>You simply loved me in a way that never hurt.</p>
+<p>Now laughter fills the rooms</p>
+<p>where fear once lived.</p>
+<p>My scars no longer feel like chains,</p>
+<p>but constellations that prove</p>
+<p>even the darkest nights can lead you home.</p>
+<p>If my past was a house of shattered windows,</p>
+<p>our love is the sunrise that pours through them,</p>
+<p>turning broken glass</p>
+<p>into something that finally catches the light.</p>
+<p>And every day beside you,</p>
+<p>I quietly thank the person I once was,</p>
+<p>the one who found the courage to leave,</p>
+<p>because she made it possible</p>
+<p>for me to find the love</p>
+<p>I never believed could be real.</p>
+
+<br>
+
+<p>By witness 14</p>
+      `,
+      poemSelf: `
+      <p>12/13/22 - So They All</p>
+<p>Breathe slow</p>
+<p>through your</p>
+<p>nose.</p>
+<p>there is no art</p>
+<p>there is no words</p>
+<p>there is no film</p>
+<p>Ever made</p>
+<p>by anything more</p>
+<p>than a</p>
+<p>man.</p>
+<p>Futile man</p>
+<p>slinging paint at</p>
+<p>the abyss,</p>
+<p>Coloring his honest</p>
+<p>to God life as clear</p>
+<p>as dirt can be</p>
+<p>made.</p>
+<p>A curse and a prayer,</p>
+<p>never able to see if</p>
+<p>anything will be</p>
+<p>Spared.</p>`
+    }
+  },
   "week-005": {
     weekNumber: "005",
     updated: "June 29, 2026",
