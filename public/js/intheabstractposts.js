@@ -1,4 +1,4 @@
-const CURRENT_ABSTRACT_WEEK = "week-0077";
+const CURRENT_ABSTRACT_WEEK = "week-007";
 
 const ABSTRACT_POSTS = {
   "BASE WEEK": {
