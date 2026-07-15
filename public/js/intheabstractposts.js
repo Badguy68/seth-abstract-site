@@ -68,7 +68,7 @@ const ABSTRACT_POSTS = {
 "week-007": {
     weekNumber: "007",
     updated: "July 13th, 2026",
-    witnessCount: "15",
+    witnessCount: "17",
 
     currentListening: {
       title: "Jimmy's Gone Numb",
