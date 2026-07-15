@@ -1,4 +1,4 @@
-const CURRENT_ABSTRACT_WEEK = "week-007";
+const CURRENT_ABSTRACT_WEEK = "week-0077";
 
 const ABSTRACT_POSTS = {
   "BASE WEEK": {
@@ -84,6 +84,7 @@ const ABSTRACT_POSTS = {
     },
 
     blogHtml: `
+    <h3>So sorry for huge delay! Thank you to the person who submitted there had been no updates. For some reason I can't figure out the website never updated with this last one!</h3>
       <h3>What has been happening</h3>
 
       <p>
