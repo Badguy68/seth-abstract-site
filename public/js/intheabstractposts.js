@@ -84,8 +84,8 @@ const ABSTRACT_POSTS = {
     },
 
     blogHtml: `
-    <p>So sorry for huge delay! Thank you to the person who submitted there had been no updates. I accidently uploaded a bad audio file to the media tab at the same time I updated this and the website never updated because of it. I was only supposed to be gone one week not this long! So sorry, we are going to be very consistent from here on out!</h3>
-      <h3>What has been happening</p>
+    <p><em>So sorry for huge delay! Thank you to the person who submitted there had been no updates. I accidently uploaded a bad audio file to the media tab at the same time I updated this and the website never updated because of it. I was only supposed to be gone one week not this long! So sorry, we are going to be very consistent from here on out!</em></p>
+      <h3>What has been happening</h3>
 
       <p>
         Sorry again everyone for the delay in updates! So much has been happening recently and hard to stay on top of it all. I want to share some of it with ya'll now though!
