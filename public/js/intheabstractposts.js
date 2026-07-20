@@ -1,4 +1,4 @@
-const CURRENT_ABSTRACT_WEEK = "week-007";
+const CURRENT_ABSTRACT_WEEK = "week-008";
 
 const ABSTRACT_POSTS = {
   "BASE WEEK": {
@@ -62,6 +62,61 @@ const ABSTRACT_POSTS = {
       poemSelf: `
       <p>22 Oct 2021 - Bodies</p>
     <p>I’m drowning in a sea of long dead corpses</p>
+      `
+    }
+  }, // end of base week
+  "week-008": {
+    weekNumber: "008",
+    updated: "July 20, 2026",
+    witnessCount: "17",
+
+    currentListening: {
+      title: "chance with you",
+      artist: "mehro",
+      cover: "/intheabstract/media/album_cover.jpg"
+    },
+
+    fragment: "Routine is the mother of productivity",
+
+    video: {
+      title: "New Davina Larose Filming and a room tour!!",
+      youtubeId: "-dy6Bdpb-GI"
+    },
+
+    blogHtml: `
+      <h3>Tune of the Devil</h3>
+
+      <p>
+        This might be the bridge of the next single. Going to be testing it on socials soon! Let me know what you think.  
+      </p>
+
+      <div class="audio-entry">
+    <button class="audio-button">
+        ▶
+    </button>
+
+    <div class="audio-info">
+        <div class="audio-title">
+            Tune of the Devil
+        </div>
+        <div class="audio-time">
+            0:44
+        </div>
+    </div>
+    <audio src="/intheabstract/media/audio/devils_tune_bridge.mp3"></audio>
+   </div>
+    `,
+
+    
+
+    voices: {
+      thought: "Awaiting...",
+      poem: `Awaiting...`,
+      poemSelf: `
+      <p>14 Feb 2022 - I Don’t Understand</p>
+<p>Two hands of a clock<br>Tick and tock<br>Locked in a rhythm<br>Of beats and blocks</p>
+<p>One carries the burden<br>The other the fox<br>Hear the chimes of touch<br>As sunken eyes swap</p>
+<p>Minutes fall back<br>The hands swinging with their luck<br>Watching each other<br>One always yelling FUCK</p>
       `
     }
   }, // end of base week
