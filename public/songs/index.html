@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Seth Abstract</title>
+
+  <!-- ========================= TRACKING ========================= -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB7LTYMNQJ"></script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-NB7LTYMNQJ');</script>
+
+  <!-- ========================= FONTS ========================= -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap"
+    rel="stylesheet">
+
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/ugg8kvv.css">
+
+  <!-- ========================= STYLES ========================= -->
+  <!-- Global Design System -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/layout.css">
+
+  <!-- Page-Specific Styles -->
+  <link rel="stylesheet" href="/css/songs.css">
+
+</head>
+
+<body data-active-page>
+
+  <!-- ========================= NAVIGATION ========================= -->
+  <div id="site-header"></div>
+
+  <!-- ========================= MAIN CONTENT ========================= -->
+  <main class="music-page-main">
+
+  <section class="section music-portal">
+    <div class="music-portal-inner">
+
+      <!-- Shown only while loading or when something goes wrong -->
+      <p id="song-status" class="song-status">
+        Loading song...
+      </p>
+
+      <!-- Hidden until the song has loaded -->
+      <div id="song-content" hidden>
+
+        <!-- Album Art -->
+        <figure class="music-cover square">
+          <img id="song-cover" src="" alt="">
+        </figure>
+
+        <!-- Title Area -->
+        <div class="music-meta">
+          <h1 id="song-title" class="music-title"></h1>
+
+          <p id="song-description" class="text-desc"></p>
+        </div>
+
+        <!-- Platform Links -->
+        <div class="platform-links">
+
+          <!-- Spotify -->
+          <a href="#" class="platform-link" data-platform="spotify">
+            <div class="platform-left">
+              <img
+                src="/music/assets/logo_spotify.jpg"
+                alt="Spotify logo"
+              >
+            </div>
+
+            <div class="platform-name">
+              Spotify
+            </div>
+
+            <div class="platform-arrow">
+              →
+            </div>
+          </a>
+
+          <!-- Apple Music -->
+          <a href="#" class="platform-link" data-platform="apple">
+            <div class="platform-left">
+              <img
+                src="/music/assets/logo_applemusic.jpg"
+                alt="Apple Music logo"
+              >
+            </div>
+
+            <div class="platform-name">
+              Apple Music
+            </div>
+
+            <div class="platform-arrow">
+              →
+            </div>
+          </a>
+
+          <!-- YouTube Music -->
+          <a href="#" class="platform-link" data-platform="youtube">
+            <div class="platform-left">
+              <img
+                src="/music/assets/logo_youtube.jpg"
+                alt="YouTube Music logo"
+              >
+            </div>
+
+            <div class="platform-name">
+              YouTube Music
+            </div>
+
+            <div class="platform-arrow">
+              →
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="song-note" class="platform-note" hidden>
+    If your listening platform isn't listed, just search up
+    'Seth Abstract'. I am on most music platforms :)
+  </div>
+
+</main>
+
+  <!-- ========================= FOOTER ========================= -->
+  <div id="site-footer"></div>
+
+  <!-- ========================= SCRIPTS ========================= -->
+  <script src="/js/includes.js"></script>
+  <script src="/js/global.js"></script>
+  <script src="/js/songs.js"></script>
+</body>
+
+</html>
