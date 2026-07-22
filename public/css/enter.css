@@ -1,0 +1,817 @@
+/* =========================================================
+   /ENTER — COMPACT SOCIAL LANDING PAGE
+
+   Uses the color, type, and button variables from global.css.
+========================================================= */
+
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================= PAGE ========================= */
+
+body.enter-page {
+  min-height: 100dvh;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 12% 5%,
+      rgba(255, 94, 91, 0.10),
+      transparent 22rem
+    ),
+    radial-gradient(
+      circle at 92% 44%,
+      rgba(76, 201, 240, 0.08),
+      transparent 20rem
+    ),
+    var(--color-bg);
+}
+
+.enter-shell {
+  width: min(100%, 520px);
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 22px 16px 26px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-label {
+  display: block;
+  margin: 0 0 4px;
+
+  font-family: var(--font-header);
+  font-size: 0.64rem;
+  font-weight: 780;
+  line-height: 1.2;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  opacity: 0.68;
+}
+
+.home-button-holder {
+  display: flex;
+  justify-content: center;
+}
+
+/* ========================= HEADER ========================= */
+
+.enter-hero {
+  padding: 14px 14px 22px;
+
+  border-bottom: 1px solid rgba(242, 233, 228, 0.16);
+
+  text-align: center;
+}
+
+.enter-hero-name {
+  width: fit-content;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: var(--font-display);
+  font-size: clamp(3.45rem, 15vw, 5.2rem);
+  line-height: 0.76;
+  letter-spacing: -0.025em;
+}
+
+.enter-hero-name:hover {
+  opacity: 0.92;
+}
+
+.enter-hero-name:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 8px;
+}
+
+.enter-hero-tagline {
+  max-width: 390px;
+  margin: 18px auto 0;
+
+  font-family: var(--font-header);
+  font-size: clamp(0.78rem, 3vw, 0.9rem);
+  font-weight: 560;
+  line-height: 1.42;
+
+  opacity: 0.84;
+}
+
+.enter-hero-role {
+  margin-top: 9px;
+
+  font-family: var(--font-header);
+  font-size: 0.6rem;
+  font-weight: 760;
+  line-height: 1.3;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: var(--color-accent-mint);
+  opacity: 0.86;
+}
+
+/* ========================= PRESAVE ========================= */
+
+.presave-section {
+  position: relative;
+
+  padding: 13px 14px 12px;
+
+  border: 1px solid rgba(255, 94, 91, 0.22);
+  border-left: 3px solid var(--color-accent-red);
+  border-radius: 10px;
+
+  background: rgba(122, 74, 90, 0.34);
+
+  box-shadow:
+    0 12px 30px rgba(18, 7, 16, 0.12);
+}
+
+.presave-heading {
+  min-width: 0;
+}
+
+.presave-heading h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 6vw, 1.72rem);
+  line-height: 1;
+}
+
+.presave-description {
+  margin-top: 4px;
+
+  font-size: 0.7rem;
+  line-height: 1.35;
+
+  opacity: 0.66;
+}
+
+.presave-form {
+  margin-top: 9px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px;
+}
+
+.presave-input {
+  min-width: 0;
+  height: 39px;
+
+  padding: 0 11px;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 7px;
+
+  outline: none;
+
+  background: rgba(28, 12, 25, 0.38);
+  color: var(--color-text);
+
+  font-family: var(--font-body);
+  font-size: 0.77rem;
+}
+
+.presave-input::placeholder {
+  color: rgba(242, 233, 228, 0.48);
+}
+
+.presave-input:focus {
+  border-color: var(--color-accent-red);
+
+  box-shadow:
+    0 0 0 2px rgba(255, 94, 91, 0.11);
+}
+
+.presave-button.button {
+  min-width: 94px;
+  height: 39px;
+
+  padding: 0 13px;
+
+  font-size: 0.98rem;
+  white-space: nowrap;
+}
+
+.presave-button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.presave-message {
+  min-height: 0;
+  margin-top: 5px;
+
+  font-size: 0.68rem;
+  line-height: 1.25;
+  text-align: right;
+
+  opacity: 0.76;
+}
+
+.presave-message:empty {
+  display: none;
+}
+
+/* ========================= FEATURED RELEASE ========================= */
+
+.release-section {
+  width: 100%;
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+
+  background: rgba(122, 74, 90, 0.28);
+
+  box-shadow:
+    0 17px 40px rgba(18, 7, 16, 0.22);
+}
+
+.song-status {
+  padding: 28px 14px;
+
+  text-align: center;
+  font-size: 0.76rem;
+
+  opacity: 0.65;
+}
+
+.release-card {
+  width: 100%;
+}
+
+/*
+  The row height is 42% of its total width.
+  The left column is also 42% of the width.
+
+  This means the left column's width and height are always
+  identical, keeping the cover perfectly square while the
+  text occupies the exact same row height.
+*/
+.release-overview {
+  width: 100%;
+  aspect-ratio: 100 / 42;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 42fr)
+    minmax(0, 58fr);
+
+  align-items: stretch;
+}
+
+.release-art {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.release-cover {
+  width: 100%;
+  height: 100%;
+
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.release-copy {
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: clamp(11px, 3.8vw, 18px);
+}
+
+.release-title {
+  display: -webkit-box;
+
+  max-width: 100%;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+
+  font-family: var(--font-display);
+  font-size: clamp(1.48rem, 7vw, 2.18rem);
+  line-height: 0.94;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.release-artist {
+  margin-top: 5px;
+
+  font-family: var(--font-header);
+  font-size: 0.67rem;
+  font-weight: 700;
+  line-height: 1.2;
+
+  color: var(--color-accent-mint);
+  opacity: 0.9;
+}
+
+.release-description {
+  display: -webkit-box;
+
+  margin-top: 7px;
+  overflow: hidden;
+
+  font-family: var(--font-body);
+  font-size: clamp(0.64rem, 2.3vw, 0.75rem);
+  line-height: 1.38;
+
+  opacity: 0.66;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* ========================= ALWAYS-OPEN PLATFORM LIST ========================= */
+
+.platform-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+
+  padding: 10px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.11);
+
+  background: rgba(27, 11, 24, 0.22);
+}
+
+.platform-choice {
+  min-height: 44px;
+
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+
+  padding: 6px 9px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  font-family: var(--font-header);
+  font-size: 0.71rem;
+  font-weight: 680;
+
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.platform-choice:hover {
+  transform: translateY(-1px);
+
+  border-color: rgba(255, 255, 255, 0.2);
+
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.platform-choice:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 2px;
+}
+
+.platform-choice img,
+.platform-lettermark {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 6px;
+}
+
+.platform-choice img {
+  object-fit: cover;
+}
+
+.platform-lettermark {
+  display: grid;
+  place-items: center;
+
+  background: var(--color-text);
+  color: #24101f;
+
+  font-family: var(--font-header);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.platform-arrow {
+  font-size: 0.76rem;
+  opacity: 0.42;
+}
+
+.platform-choice.is-unavailable {
+  pointer-events: none;
+
+  opacity: 0.34;
+  filter: grayscale(1);
+}
+
+/* ========================= ALBUM-COVER ART PRINTS ========================= */
+
+.prints-section {
+  position: relative;
+
+  margin-top: 4px;
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 209, 102, 0.25);
+  border-top: 3px solid var(--color-accent-gold);
+  border-radius: 16px;
+
+  background:
+    radial-gradient(
+      circle at 50% 32%,
+      rgba(255, 209, 102, 0.11),
+      transparent 15rem
+    ),
+    rgba(92, 50, 68, 0.42);
+
+  box-shadow:
+    0 18px 42px rgba(18, 7, 16, 0.18);
+}
+
+.prints-heading {
+  padding: 18px 18px 0;
+
+  text-align: center;
+}
+
+.prints-heading .section-label {
+  color: var(--color-accent-gold);
+  opacity: 0.92;
+}
+
+.prints-heading h2 {
+  max-width: 390px;
+  margin: 0 auto;
+
+  font-size: clamp(1.65rem, 7.5vw, 2.2rem);
+  line-height: 0.98;
+}
+
+.prints-heading > p:last-child {
+  max-width: 350px;
+  margin: 8px auto 0;
+
+  font-size: 0.72rem;
+  line-height: 1.4;
+
+  opacity: 0.64;
+}
+
+.print-carousel {
+  position: relative;
+
+  width: 100%;
+  height: 190px;
+
+  overflow: hidden;
+}
+
+.print-carousel::before,
+.print-carousel::after {
+  content: "";
+
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+
+  width: 32px;
+
+  pointer-events: none;
+}
+
+.print-carousel::before {
+  left: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(70, 35, 57, 0.98),
+      transparent
+    );
+}
+
+.print-carousel::after {
+  right: 0;
+
+  background:
+    linear-gradient(
+      to left,
+      rgba(70, 35, 57, 0.98),
+      transparent
+    );
+}
+
+.print-track {
+  position: absolute;
+  top: 27px;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  width: max-content;
+
+  will-change: transform;
+}
+
+.print-track.is-animated {
+  transition:
+    transform 760ms cubic-bezier(0.2, 0.78, 0.24, 1);
+}
+
+/*
+  Hide the track until JavaScript has created the cards on
+  both sides and centered the first real card.
+*/
+.print-track {
+  visibility: hidden;
+}
+
+.print-track.is-ready {
+  visibility: visible;
+}
+
+/*
+  During an invisible loop reset, neither the track nor the
+  individual cards should animate.
+*/
+.print-track.is-resetting,
+.print-track.is-resetting .print-card {
+  transition: none !important;
+}
+
+.print-card {
+  position: relative;
+  z-index: 1;
+
+  width: 94px;
+  height: 132px;
+
+  flex: 0 0 auto;
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  box-shadow:
+    0 13px 25px rgba(18, 7, 16, 0.34);
+
+  opacity: 0.38;
+
+  transform:
+    scale(0.82)
+    rotate(-4deg);
+
+  transition:
+    opacity 520ms ease,
+    transform 760ms cubic-bezier(0.2, 0.78, 0.24, 1),
+    filter 520ms ease;
+
+  filter: saturate(0.72);
+}
+
+.print-card:nth-child(even) {
+  transform:
+    scale(0.82)
+    rotate(4deg);
+}
+
+/* The print centered on the page is visibly larger. */
+.print-card.is-active {
+  z-index: 3;
+
+  opacity: 1;
+
+  transform:
+    scale(1.2)
+    rotate(0deg);
+
+  filter: saturate(1);
+
+  box-shadow:
+    0 18px 34px rgba(18, 7, 16, 0.46);
+}
+
+.print-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/*
+  This footer belongs to the print panel.
+  Its border and darker background visually attach the
+  shop button to the prints above it.
+*/
+.print-action {
+  padding: 13px 16px 16px;
+
+  border-top: 1px solid rgba(255, 209, 102, 0.16);
+
+  background: rgba(28, 12, 25, 0.18);
+}
+
+.print-shop-button.button {
+  width: min(100%, 330px);
+
+  padding: 9px 20px;
+
+  text-align: center;
+}
+
+/* ========================= ABOUT ========================= */
+
+.about-section {
+  position: relative;
+
+  padding: 17px 18px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-left: 3px solid var(--color-accent-blue);
+  border-radius: 12px;
+
+  background: rgba(122, 74, 90, 0.22);
+}
+
+.about-section h2 {
+  margin: 0;
+
+  font-size: clamp(1.55rem, 7vw, 2rem);
+  line-height: 1;
+}
+
+.about-section > p:last-child {
+  margin-top: 9px;
+
+  font-size: 0.76rem;
+  line-height: 1.55;
+
+  opacity: 0.72;
+}
+
+/* ========================= SECRETS ========================= */
+
+.secret-section {
+  padding: 7px 0 10px;
+}
+
+.secret-divider {
+  width: 100%;
+  height: 1px;
+  margin: 0 0 19px;
+
+  display: block;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(184, 242, 230, 0.42),
+      transparent
+    );
+}
+
+.secret-section .button {
+  min-width: 150px;
+
+  padding: 8px 22px;
+
+  font-size: 1.08em;
+  text-align: center;
+}
+
+/* ========================= RESPONSIVE ========================= */
+
+@media (max-width: 390px) {
+
+  .enter-shell {
+    padding-inline: 12px;
+  }
+
+  .enter-hero {
+    padding-top: 10px;
+  }
+
+  /*
+    On narrow phones the cover uses 40% of the row.
+    The row height changes to 40%, preserving the square.
+  */
+  .release-overview {
+    aspect-ratio: 100 / 40;
+
+    grid-template-columns:
+      minmax(0, 40fr)
+      minmax(0, 60fr);
+  }
+
+  .release-copy {
+    padding: 10px 11px;
+  }
+
+  .release-title {
+    font-size: clamp(1.3rem, 6.8vw, 1.65rem);
+
+    -webkit-line-clamp: 2;
+  }
+
+  .release-description {
+    margin-top: 5px;
+
+    -webkit-line-clamp: 2;
+  }
+
+  .print-track {
+    gap: 11px;
+  }
+
+}
+
+@media (max-width: 335px) {
+
+  .presave-description {
+    display: none;
+  }
+
+  .presave-form {
+    grid-template-columns: 1fr;
+  }
+
+  .presave-button.button {
+    width: 100%;
+  }
+
+  .release-description {
+    display: none;
+  }
+
+  .platform-choice {
+    grid-template-columns:
+      25px
+      minmax(0, 1fr);
+  }
+
+  .platform-choice img,
+  .platform-lettermark {
+    width: 25px;
+    height: 25px;
+  }
+
+  .platform-arrow {
+    display: none;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .platform-choice,
+  .print-track,
+  .print-card {
+    transition: none !important;
+  }
+
+}

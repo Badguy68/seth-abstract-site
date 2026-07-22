@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Seth Abstract</title>
+
+  <!-- ========================= TRACKING ========================= -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB7LTYMNQJ"></script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NB7LTYMNQJ');</script>
+  
+  <!-- ========================= FONTS ========================= -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/ugg8kvv.css">
+
+  <!-- ========================= STYLES ========================= -->
+  <!-- Global Design System -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/layout.css">
+
+  <!-- Page-Specific Styles -->
+  <link rel="stylesheet" href="/css/enter.css">
+
+</head>
+
+<body data-active-page>
+
+  <!-- ========================= NAVIGATION ========================= -->
+  <div id="site-header"></div>
+
+  <!-- ========================= MAIN CONTENT ========================= -->
+  <main class="enter-shell">
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="enter-hero">
+
+      <a
+        class="enter-hero-name"
+        href="/"
+        aria-label="Seth Abstract home">
+
+        <span>Seth</span>
+        <span>Abstract</span>
+      </a>
+
+      <p class="enter-hero-tagline">
+        Where poems become songs, characters, and cinematic worlds.
+      </p>
+
+      <p class="enter-hero-role">
+        Digital Conductor / Performance Artist
+      </p>
+
+    </header>
+
+    <!-- ========================= PRESAVE ========================= -->
+    <!--
+      Set PRESAVE_SONG_TITLE in enter.js.
+
+      Leaving it empty removes this entire section and all of
+      the section's spacing.
+    -->
+    <section
+      id="presave-section"
+      class="presave-section"
+      aria-labelledby="presave-title"
+      hidden>
+
+      <div class="presave-heading">
+
+        <p class="section-label">
+          Coming Next
+        </p>
+
+        <h2 id="presave-title"></h2>
+
+      </div>
+
+      <p class="presave-description">
+        Enter your email and I’ll let you know when new things release.
+      </p>
+
+      <form
+        id="music-presave-form"
+        class="presave-form">
+
+        <label
+          class="sr-only"
+          for="music-presave-email">
+          Email address
+        </label>
+
+        <input
+          id="music-presave-email"
+          class="presave-input"
+          name="email"
+          type="email"
+          autocomplete="email"
+          placeholder="Email address"
+          required>
+
+        <button
+          class="button button-red presave-button"
+          type="submit">
+          Notify Me
+        </button>
+
+      </form>
+
+      <p
+        id="music-presave-message"
+        class="presave-message"
+        role="status"
+        aria-live="polite">
+      </p>
+
+    </section>
+
+    <!-- ========================= FEATURED RELEASE ========================= -->
+    <section
+      class="release-section"
+      aria-label="Featured release">
+
+      <p
+        id="song-status"
+        class="song-status"
+        role="status">
+        Loading the latest release...
+      </p>
+
+      <article
+        id="release-card"
+        class="release-card"
+        hidden>
+
+        <!-- Square cover and text are locked to the same row height. -->
+        <div class="release-overview">
+
+          <figure class="release-art">
+
+            <img
+              id="featured-song-cover"
+              class="release-cover"
+              src=""
+              alt="">
+
+          </figure>
+
+          <div class="release-copy">
+
+            <p class="section-label">
+              Out Now
+            </p>
+
+            <h1
+              id="featured-song-title"
+              class="release-title">
+            </h1>
+
+            <p class="release-artist">
+              Seth Abstract
+            </p>
+
+            <p
+              id="featured-song-description"
+              class="release-description">
+            </p>
+
+          </div>
+
+        </div>
+
+        <!--
+          These choices stay open at all times.
+
+          JavaScript only fills their links from songs.json.
+        -->
+        <nav
+          id="platform-panel"
+          class="platform-panel"
+          aria-label="Listen on a music platform">
+
+          <a
+            id="platform-spotify"
+            class="platform-choice"
+            data-platform="spotify"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <img
+              src="/music/assets/logo_spotify.jpg"
+              alt="">
+
+            <span>Spotify</span>
+
+            <span
+              class="platform-arrow"
+              aria-hidden="true">
+              ↗
+            </span>
+
+          </a>
+
+          <a
+            id="platform-apple"
+            class="platform-choice"
+            data-platform="apple"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <img
+              src="/music/assets/logo_applemusic.jpg"
+              alt="">
+
+            <span>Apple Music</span>
+
+            <span
+              class="platform-arrow"
+              aria-hidden="true">
+              ↗
+            </span>
+
+          </a>
+
+          <a
+            id="platform-youtube"
+            class="platform-choice"
+            data-platform="youtube"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <img
+              src="/music/assets/logo_youtube.jpg"
+              alt="">
+
+            <span>YouTube</span>
+
+            <span
+              class="platform-arrow"
+              aria-hidden="true">
+              ↗
+            </span>
+
+          </a>
+
+          <a
+            id="platform-suno"
+            class="platform-choice"
+            data-platform="suno"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <img
+              src="/music/assets/logo_suno.png"
+              alt="">
+
+            <span>Suno</span>
+
+            <span
+              class="platform-arrow"
+              aria-hidden="true">
+              ↗
+            </span>
+
+          </a>
+
+        </nav>
+
+      </article>
+
+    </section>
+
+    <!-- ========================= ALBUM-COVER ART PRINTS ========================= -->
+    <section
+      class="prints-section"
+      aria-labelledby="prints-title">
+
+      <header class="prints-heading">
+
+        <p class="section-label">
+          Album-Cover Art Prints
+        </p>
+
+        <h2 id="prints-title">
+          Collect the worlds behind the songs.
+        </h2>
+
+        <p>
+          Physical 5×7 prints of Seth Abstract’s album-cover artwork.
+        </p>
+
+      </header>
+
+      <!--
+        The carousel moves automatically.
+        There are intentionally no interactive controls.
+      -->
+      <div
+        id="print-carousel"
+        class="print-carousel"
+        aria-label="Album-cover art prints rotating automatically">
+
+        <div
+          id="print-track"
+          class="print-track">
+
+          <figure class="print-card">
+
+            <img
+              src="/shop/shop-front-images/thecrash.jpg"
+              alt="A Dream Within a Dream album-cover art print">
+
+          </figure>
+
+          <figure class="print-card">
+
+            <img
+              src="/shop/shop-front-images/theballadofdavinalarose.jpg"
+              alt="A Dream Within a Dream album-cover art print">
+
+          </figure>
+
+          <figure class="print-card">
+
+            <img
+              src="/shop/shop-front-images/thelivingarchive.jpg"
+              alt="A Dream Within a Dream album-cover art print">
+
+          </figure>
+
+          <figure class="print-card">
+
+            <img
+              src="/shop/shop-front-images/ozymandias.jpg"
+              alt="Ozymandias album-cover art print">
+
+          </figure>
+
+          <figure class="print-card">
+
+            <img
+              src="/shop/shop-front-images/annabellee.jpg"
+              alt="Annabel Lee album-cover art print">
+
+          </figure>
+
+          <figure class="print-card">
+
+            <img
+              src="/shop/shop-front-images/toilandtrouble.jpg"
+              alt="Toil and Trouble album-cover art print">
+
+          </figure>
+
+        </div>
+
+      </div>
+
+      <!-- Attached action area for the art-print section. -->
+      <div class="print-action">
+
+        <div class="home-button-holder">
+
+          <a
+            href="/shop/"
+            class="button button-gold print-shop-button">
+            View Art Prints
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================= ABOUT ========================= -->
+    <section
+      class="about-section"
+      aria-labelledby="about-title">
+
+      <p class="section-label">
+        About Seth
+      </p>
+
+      <h2 id="about-title">
+        The Digital Conductor
+      </h2>
+
+      <p>
+        Seth turns classic and modern poems into songs, characters, and cinematic worlds. He orchestrates the work with AI, gives it a human body through performance, and collaborates with poets, muscians, and creators to bring it to life.
+      </p>
+
+    </section>
+
+    <!-- ========================= SECRETS ========================= -->
+    <section
+      class="secret-section"
+      aria-label="Secrets">
+
+      <span
+        class="secret-divider"
+        aria-hidden="true">
+      </span>
+
+      <div class="home-button-holder">
+
+        <a
+          href="/secrets/inputs/"
+          class="button button-mint">
+          Secrets
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================= FOOTER ========================= -->
+  <div id="site-footer"></div>
+
+  <!-- ========================= SCRIPTS ========================= -->
+    <script src="/js/includes.js"></script>
+  <script src="/js/global.js"></script>
+  <script src="/js/enter.js"></script>
+
+</body>
+</html>
