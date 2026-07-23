@@ -342,8 +342,9 @@ body.enter-page {
 .release-description {
   display: -webkit-box;
 
-  margin-top: 7px;
+  margin-top: 3px;
   overflow: hidden;
+  flex-shrink: 0;
 
   font-family: var(--font-body);
   font-size: clamp(0.64rem, 2.3vw, 0.75rem);
@@ -760,8 +761,12 @@ body.enter-page {
 
   .release-description {
     margin-top: 5px;
+    
+    -webkit-line-clamp: 3;
+  }
 
-    -webkit-line-clamp: 2;
+  .release-artist {
+    display: none;  
   }
 
   .print-track {

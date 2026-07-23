@@ -25,12 +25,6 @@ const MUSIC_PRESAVE_WEBHOOK_URL =
 ========================================================= */
 
 function initializeEnterPage() {
-  /*
-    Presave is independent of the song database.
-
-    A database problem cannot prevent a valid presave title
-    from revealing the form.
-  */
   initializePresave();
   initializePrintCarousel();
   initializeFeaturedSong();
@@ -64,14 +58,6 @@ function initializePresave() {
   const form = document.getElementById(
     "music-presave-form"
   );
-
-  if (!section || !title || !form) {
-    console.error(
-      "Presave markup is missing from /enter/index.html."
-    );
-
-    return;
-  }
 
   const cleanTitle = String(
     PRESAVE_SONG_TITLE || ""
