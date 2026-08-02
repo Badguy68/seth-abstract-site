@@ -1,4 +1,4 @@
-const CURRENT_ABSTRACT_WEEK = "week-008";
+const CURRENT_ABSTRACT_WEEK = "week-009";
 
 const ABSTRACT_POSTS = {
   "BASE WEEK": {
@@ -65,6 +65,77 @@ const ABSTRACT_POSTS = {
       `
     }
   }, // end of base week
+  "week-009": {
+    weekNumber: "009",
+    updated: "2 August 2026",
+    witnessCount: "22",
+
+    currentListening: {
+      title: "it's a real Cruel World",
+      artist: "Holly Humberstone",
+      cover: "/intheabstract/media/album_cover.jpg"
+    },
+
+    fragment: "You have to remember to love everything",
+
+    video: {
+      title: "Acting in a short film? Also new single announcement",
+      youtubeId: "YRBrnDVxObc"
+    },
+
+    blogHtml: `
+      <h3>A snippet from the new song - we need a name still</h3>
+
+      <p>
+        A really cool poem that is making what is hopefully a really cool song. As of today moving into production for this. Will share more soon!
+      </p>
+
+      <div class="audio-entry">
+    <button class="audio-button">
+        ▶
+    </button>
+
+    <div class="audio-info">
+        <div class="audio-title">
+            Devil's Tune Chorus Rough
+        </div>
+        <div class="audio-time">
+            0:43
+        </div>
+    </div>
+    <audio src="/intheabstract/media/audio/devil_tune_rough_chorus.mp3"></audio>
+   </div>
+    `,
+
+    
+
+    voices: {
+      thought: `<p>Just checking in. Loving all the videos and content. Hopefully your not over working yourself :)</p><br><em>Seth Abstract: Doing my best, glad you are liking the new stuff :D</em>`,
+      poem: `
+<p>The Cartographer of Tomorrow</p>
+
+<p>Some people carry maps.<br>I carry blank paper.<br>Not because I am lost, but because the roads I need have not yet agreed to exist.</p>
+
+<p>The wind keeps offering directions written in a language only brave footsteps can read.</p>
+
+<p>Mountains stand with folded arms, certain they are forever. Then rain arrives, patient as a whispered promise, and teaches stone that even giants are fluent in change.</p>
+
+<p>I have met sorrow. It poured tea in chipped cups and spoke with a familiar voice. I have met joy too. It never knocked, only laughed through an open window and asked if there was room for one more.</p>
+
+<p>So I walk.<br>Not toward certainty, but toward possibility.</p>
+
+<p>For every ending leaves behind a handful of stars, and every dawn borrows its light from dreams stubborn enough to survive the night.</p>
+
+<p>If tomorrow asks who I am,<br>I'll hand it my empty map,<br>and smile,<br>because there is still so much beautiful country left to draw.</p>
+
+<p>Witness 14</p>
+      `,
+      poemSelf: `
+      <p>9/1/22</p>
+<p>The air pressed to dance<br>By small bird hands. Notes crashing<br>On a poor owl's door.</p>
+      `
+    }
+  },
   "week-008": {
     weekNumber: "008",
     updated: "July 20, 2026",
