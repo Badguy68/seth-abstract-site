@@ -1,6 +1,6 @@
 const SHOP_WEBHOOK_URL = "https://hook.us2.make.com/k53rdemx7o9jg7hcl19ye876vybexlhm";
 
-let currentShopCategory = "art";
+let currentShopCategory = "all";
 const cartState = {};
 let currentModalProductID = null;
 let currentModalSide = "front";
@@ -47,7 +47,17 @@ function renderShopProducts(category) {
   const shopGrid = document.getElementById("shop-grid");
   const tabDescription = document.getElementById("shop-tab-description");
 
-  const filteredProducts = shopProducts.filter((product) => product.category === category);
+  //Load all or just the ones in a category
+  let filteredProducts;
+  if (category === "all") {
+    filteredProducts = shopProducts.filter(
+      (product) => product.category !== "hidden"
+    );
+  } else {
+    filteredProducts = shopProducts.filter(
+      (product) => product.category === category
+    );
+  }
 
   shopGrid.innerHTML = filteredProducts.map(createShopCardHTML).join("");
   tabDescription.textContent = shopTabDescriptions[category];
@@ -57,9 +67,11 @@ function renderShopProducts(category) {
 function setActiveTab(category) {
   currentShopCategory = category;
 
+  const allTab = document.getElementById("tab-all");
   const albumTab = document.getElementById("tab-album");
   const artTab = document.getElementById("tab-art");
 
+  allTab.classList.toggle("is-active", category === "all");
   albumTab.classList.toggle("is-active", category === "album");
   artTab.classList.toggle("is-active", category === "art");
 
@@ -68,9 +80,11 @@ function setActiveTab(category) {
 
 //Set up onclick functions for tabs
 function initializeShopTabs() {
+  const allTab = document.getElementById("tab-all");
   const albumTab = document.getElementById("tab-album");
   const artTab = document.getElementById("tab-art");
 
+  allTab.addEventListener("click", () => setActiveTab("all"));
   albumTab.addEventListener("click", () => setActiveTab("album"));
   artTab.addEventListener("click", () => setActiveTab("art"));
 }
