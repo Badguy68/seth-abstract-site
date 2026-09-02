@@ -21,6 +21,18 @@
       "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_nJ4Ox2I3uQKNLx7c6jD4AdSJ166v1nn74",
       "suno": "https://suno.pxf.io/k4AAAM"
     }
+  },
+
+  "diamond-cut": {
+    "title": "Diamond Cut Sorrow",
+    "description": "A dark theatrical song about the temptation and pain of making art. Giving you a glimpse behind the mask of a mad man.",
+    "shortDescription": "Dark theatrical song about the temptation and pain of making art.",
+    "links": {
+      "spotify": "https://open.spotify.com/album/7esemHbbg82ld0T1xBmWMJ?si=5uyqjpcyQ02hLsd4KDiXOw",
+      "apple": "https://music.apple.com/us/album/the-living-archive/1892691861",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_nJ4Ox2I3uQKNLx7c6jD4AdSJ166v1nn74",
+      "suno": "https://suno.com/s/3LGHwrtfYKpw4bdz"
+    }
   }
 
 }
