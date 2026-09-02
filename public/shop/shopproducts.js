@@ -7,6 +7,14 @@ const shopTabDescriptions = {
 const shopProducts = [
   //SINGLES ART ----------------------------------------------
   {
+    id: "diamondcutsorrow",
+    name: "Diamond Cut Sorrow",
+    category: "art",
+    price: 9,
+    square: "RIP5XZM4NAPS36EU72YJSVN6"
+  },
+  
+  {
     id: "theballadofdavinalarose",
     name: "The Ballad of Davina Larose",
     category: "art",
