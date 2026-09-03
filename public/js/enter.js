@@ -5,11 +5,11 @@
 ========================================================= */
 
 // This must match the song keyword used in songs.json.
-const FEATURED_SONG = "the-living-archive";
+const FEATURED_SONG = "diamond-cut";
 
 // Add a title between the backticks to show the presave section.
 // Leave it completely empty to hide the section and its spacing.
-const PRESAVE_SONG_TITLE = `Diamond Cut Sorrow`;
+const PRESAVE_SONG_TITLE = ``;
 
 /* =========================================================
    ONE-TIME SITE SETTINGS
