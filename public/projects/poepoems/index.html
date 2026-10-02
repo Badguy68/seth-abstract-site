@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Seth Abstract</title>
+<link rel="icon" type="image/jpeg" href="/global_assets/web_icon.jpg">
+
+  <!-- ========================= TRACKING ========================= -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N8HF9STP');</script>
+  
+  <!-- ========================= FONTS ========================= -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/ugg8kvv.css">
+
+  <!-- ========================= STYLES ========================= -->
+  <!-- Global Design System -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/layout.css">
+
+  <!-- Page-Specific Styles -->
+  <link rel="stylesheet" href="/css/poepoems.css">
+
+</head>
+
+<body data-active-page>
+
+  <!-- ========================= NAVIGATION ========================= -->
+  <div id="site-header"></div>
+
+  <!-- ========================= MAIN CONTENT ========================= -->
+  <main class="archive">
+  <header class="masthead">
+    <a href="https://sethabstract.com" class="brand">Seth Abstract</a>
+    <span class="archive-label">The Living Archive / An experiment</span>
+  </header>
+
+  <section class="intro" aria-labelledby="page-title">
+    <p class="eyebrow">A poem in two voices</p>
+    <h1 id="page-title">Write with Poe</h1>
+
+    <p class="invitation">
+      Offer a word. Let his language answer.
+    </p>
+
+    <p class="explanation">
+      You write one word, then Poe contributes the next.
+      This program counts which words followed yours in a collection
+      of his writing, then picks one at random. Words he used more
+      often in that position are more likely to appear.
+    </p>
+
+    <p class="explanation">
+      It remembers word pairs, not the meaning of your poem.
+      Treat it as a creative exercise: follow the surprises,
+      shape the lines, and see what emerges.
+      If your word has no recorded next word, you get another turn.
+    </p>
+  </section>
+
+  <section class="poem-panel" aria-labelledby="poem-heading">
+    <div class="panel-heading">
+      <h2 id="poem-heading">Your shared poem</h2>
+
+      <div class="author-key" aria-label="Word authors">
+        <span class="key-player">You</span>
+        <span class="key-poe">Poe</span>
+      </div>
+    </div>
+
+    <div
+      id="poem-display"
+      class="poem-display"
+      aria-label="The poem you are writing"
+      aria-describedby="poem-heading"
+    ></div>
+
+    <p id="poem-placeholder" class="poem-placeholder">
+      Every haunting begins with a word.
+    </p>
+  </section>
+
+  <p id="game-message" class="game-message" role="status" aria-atomic="true">
+    Loading Poe’s words…
+  </p>
+
+  <section id="writing-controls" class="writing-controls"
+    aria-label="Writing controls">
+
+    <form id="word-form" class="word-form">
+      <label for="writing" class="input-label">Your next word</label>
+      
+      <div class="input-row">
+  <input
+    id="writing"
+    name="word"
+    type="text"
+    placeholder="Begin here"
+    autocomplete="off"
+    spellcheck="true"
+    aria-describedby="input-hint game-message"
+    disabled
+  >
+
+  <div class="entry-actions">
+    <button
+      id="submit-word"
+      class="button button-primary"
+      type="submit"
+      disabled
+    >
+      Add word
+    </button>
+
+    <button
+      id="new-line"
+      class="button button-secondary"
+      type="button"
+      disabled
+    >
+      New line
+    </button>
+  </div>
+</div>
+
+      <p id="input-hint" class="input-hint">
+        One word at a time, without punctuation.
+        Apostrophes within words are welcome.
+        Review, then confirm.
+      </p>
+    </form>
+
+    <div class="action-row">
+      <div class="secondary-actions">
+
+        <button id="auto-poe" class="button button-secondary"
+          type="button" disabled>
+          Let Poe write
+        </button>
+
+        <button
+    id="clear-poem"
+    class="button button-secondary"
+    type="button"
+    disabled
+  >
+    Clear poem
+  </button>
+      </div>
+
+      <button id="finish-poem" class="button button-secondary"
+        type="button" disabled>
+        Finish poem
+      </button>
+    </div>
+  </section>
+
+  <section id="finished-controls" class="finished-controls"
+    aria-label="Finished poem controls" hidden>
+    <p class="finished-note">Two voices. One poem.</p>
+
+    <div class="finished-actions">
+      <button id="copy-poem" class="button button-primary" type="button">
+        Copy poem
+      </button>
+
+      <button id="start-another" class="button button-secondary" type="button">
+        Start another
+      </button>
+    </div>
+  </section>
+
+
+  <footer class="page-footer">
+    <span>A collaboration across time</span>
+    <span>Built from word pairs in Poe’s collected writing.</span>
+  </footer>
+</main>
+
+  <!-- ========================= FOOTER ========================= -->
+  <div id="site-footer"></div>
+
+  <!-- ========================= SCRIPTS ========================= -->
+    <script src="/js/includes.js"></script>
+  <script src="/js/global.js"></script>
+  <script src="/js/poepoems.js" defer></script>
+
+</body>
+</html>

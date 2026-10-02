@@ -1,0 +1,367 @@
+/* Page-specific theme: does not change your global variables. */
+body:has(main.archive) {
+  background: #090909;
+}
+
+main.archive {
+  --page-surface: #111111;
+  --page-text: #f2f2ef;
+  --page-muted: #aaa9a6;
+  --page-border: var(--color-border);
+  --poe-color: var(--color-accent-blue);
+  --font-poem: Georgia, "Times New Roman", serif;
+
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+  color: var(--page-text);
+}
+
+/* Prevent layout rules from overriding hidden controls. */
+.archive [hidden] {
+  display: none !important;
+}
+
+.archive p {
+  opacity: 1;
+}
+
+.archive ::selection {
+  background: var(--page-text);
+  color: #090909;
+}
+
+/* Header */
+.archive .masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  padding: 26px 0;
+  border-bottom: 1px solid var(--page-border);
+  font-family: var(--font-header);
+  font-size: 12px;
+}
+
+.archive .archive-label {
+  color: var(--page-muted);
+}
+
+/* Introduction */
+.archive .intro {
+  padding: var(--spacing-xl) 0 40px;
+  text-align: center;
+}
+
+.archive .eyebrow {
+  font-family: var(--font-header);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.archive h1 {
+  margin: 22px 0;
+  font-family: var(--font-display);
+  font-size: clamp(48px, 9vw, 92px);
+  font-weight: 400;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.archive .invitation {
+  margin-bottom: 22px;
+  font-family: var(--font-poem);
+  font-size: clamp(19px, 3vw, 24px);
+}
+
+.archive .explanation {
+  max-width: 610px;
+  margin: 12px auto 0;
+  color: var(--page-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Poem */
+.archive .poem-panel {
+  position: relative;
+  padding: 26px 30px 34px;
+  border: 1px solid var(--page-border);
+  background: var(--page-surface);
+}
+
+.archive .panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--page-border);
+  font-family: var(--font-header);
+}
+
+.archive .panel-heading h2 {
+  font-family: var(--font-header);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.archive .author-key {
+  display: flex;
+  gap: 20px;
+  font-size: 12px;
+}
+
+.archive .key-player,
+.archive .word-player {
+  color: var(--page-text);
+}
+
+.archive .key-poe,
+.archive .word-poe {
+  color: var(--poe-color);
+}
+
+.archive .poem-display {
+  min-height: 200px;
+  padding-top: 28px;
+  font-family: var(--font-poem);
+  font-size: clamp(23px, 4vw, 32px);
+  line-height: 1.85;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.archive .word-entering {
+  animation: poe-word-appear 160ms ease-out both;
+}
+
+.archive .poem-placeholder {
+  position: absolute;
+  top: 100px;
+  left: 30px;
+  right: 30px;
+  color: var(--page-muted);
+  font-family: var(--font-poem);
+  font-size: clamp(20px, 3vw, 27px);
+  font-style: italic;
+  pointer-events: none;
+}
+
+/* Word entry */
+.archive .writing-controls {
+  padding-top: 26px;
+}
+
+.archive .input-label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--font-header);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.archive .input-row {
+  display: flex;
+  gap: 12px;
+}
+
+.archive #writing {
+  flex: 1;
+  min-width: 0;
+  min-height: 52px;
+  padding: 12px var(--spacing-md);
+  border: 1px solid var(--page-border);
+  border-radius: 0;
+  background: var(--page-surface);
+  color: var(--page-text);
+  font-family: var(--font-poem);
+  font-size: 21px;
+}
+
+.archive #writing::placeholder {
+  color: var(--page-muted);
+}
+
+.archive .input-hint {
+  margin-top: 10px;
+  color: var(--page-muted);
+  font-size: 12px;
+}
+
+/* Override the global button appearance only within this page. */
+.archive .button {
+  min-height: 46px;
+  padding: 12px 18px;
+  border: 1px solid var(--page-border);
+  border-radius: 0;
+  font-family: var(--font-header);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.archive .button-primary {
+  background: var(--page-text);
+  border-color: var(--page-text);
+  color: #090909;
+}
+
+.archive .button-secondary {
+  background: transparent;
+  color: var(--page-text);
+}
+
+/* Cancel the global hover movement and opacity change. */
+.archive .button:hover {
+  transform: none;
+  opacity: 1;
+}
+
+.archive .button-primary:hover:not(:disabled) {
+  background: #d7d7d3;
+}
+
+.archive .button-secondary:hover:not(:disabled) {
+  background: #252525;
+}
+
+.archive .button:disabled,
+.archive #writing:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.archive button:focus-visible,
+.archive input:focus-visible,
+.archive a:focus-visible {
+  outline: 2px solid var(--page-text);
+  outline-offset: 4px;
+}
+
+/* Actions */
+.archive .action-row,
+.archive .secondary-actions,
+.archive .finished-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.archive .action-row {
+  justify-content: space-between;
+  margin-top: 22px;
+}
+
+.archive .finished-controls {
+  padding-top: 24px;
+  text-align: center;
+}
+
+.archive .finished-note {
+  margin-bottom: var(--spacing-md);
+  color: var(--page-muted);
+  font-family: var(--font-poem);
+  font-style: italic;
+}
+
+.archive .finished-actions {
+  justify-content: center;
+}
+
+.archive .game-message {
+  min-height: 24px;
+  margin-top: var(--spacing-md);
+  color: var(--page-muted);
+  font-size: 13px;
+}
+
+/* Footer */
+.archive .page-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 38px;
+  padding: 22px 0;
+  border-top: 1px solid var(--page-border);
+  color: var(--page-muted);
+  font-family: var(--font-header);
+  font-size: 11px;
+}
+
+@keyframes poe-word-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  main.archive {
+    width: calc(100% - 28px);
+  }
+
+  .archive .intro {
+    padding-top: 38px;
+  }
+
+  .archive .poem-panel {
+    padding: 20px;
+  }
+
+  .archive .poem-placeholder {
+    left: 20px;
+    right: 20px;
+  }
+
+  .archive .input-row {
+    flex-direction: column;
+  }
+
+  .archive .input-row .button {
+    width: 100%;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .archive .word-entering {
+    animation: none;
+  }
+
+  .archive .button {
+    transition: none;
+  }
+}
+
+.archive .entry-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.archive .entry-actions .button {
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .archive .entry-actions {
+    width: 100%;
+  }
+
+  .archive .entry-actions .button {
+    flex: 1;
+    width: auto;
+  }
+}
