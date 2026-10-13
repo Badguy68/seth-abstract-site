@@ -4,10 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <meta name="robots" content="noindex, nofollow">
 
-  <title>Seth Abstract</title>
-<link rel="icon" type="image/jpeg" href="/global_assets/web_icon.jpg">
-
+  <title>The Abstract | Seth Abstract</title>
+  <link rel="icon" type="image/jpeg" href="/global_assets/web_icon.jpg">
+ 
   <!-- ========================= TRACKING ========================= -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -27,13 +29,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="stylesheet" href="https://use.typekit.net/ugg8kvv.css">
 
   <!-- ========================= STYLES ========================= -->
-  <!-- Global Design System -->
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/css/layout.css">
-
-  <!-- Page-Specific Styles -->
   <link rel="stylesheet" href="/css/intheabstract.css">
-
 </head>
 
 <body data-active-page>
@@ -42,139 +40,253 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div id="site-header"></div>
 
   <!-- ========================= MAIN CONTENT ========================= -->
-  <main class="abstract-page">
+  <main class="abstract-page" id="top">
+    <div class="abstract-shell">
 
-    <section class="abstract-hero">
-      <h1>THE ABSTRACT</h1>
+      <!-- ========================= HERO ========================= -->
+      <header class="abstract-hero">
+        <p class="abstract-overline">A hidden space for the Witnesses</p>
+        <h1>THE ABSTRACT</h1>
+        <p class="abstract-intro" id="archive-description">
+          A living archive of poetry, behind the scenes videos, song sneak peeks, and more.
+        </p>
+        <p class="abstract-invitation">You found your own way here. Please keep this link to yourself. Others should discover the key on their own.</p>
 
-      <p class="abstract-intro">
-        You found your way here. This page updates every Sunday with notes,
-        fragments, songs, and voices from the hidden side of The Abstract.
-        Please do not share the direct link. Others should find the key themselves.
-      </p>
-    </section>
+        <!-- ========================= WITNESS COUNT ========================= -->
+        <div class="abstract-witness-count">
 
-    <section class="abstract-panel-grid">
+          <span class="witness-count-label">The Witnesses</span>
 
-      <article class="abstract-mini-panel">
-        <span class="panel-label">Archive Status</span>
-        <p><strong>Witnesses:</strong> <span id="witness-count"></span></p>
-        <p><strong>Week:</strong> <span id="archive-week"></span></p>
-        <p><strong>Updated:</strong> <span id="archive-updated"></span></p>
-      </article>
+          <strong class="witness-count-number">22</strong>
 
-      <article class="abstract-mini-panel">
-        <span class="panel-label">Current Listening</span>
-        <div class="listening-card">
-          <img id="song-cover" src="" alt="Album cover">
-          <div>
-            <h2 id="song-title"></h2>
-            <p id="song-artist"></p>
+          <span class="witness-count-caption">
+            Souls Beyond the Gate
+          </span>
+
+        </div>
+
+        <div class="abstract-stats" aria-label="Archive statistics">
+          <div class="abstract-stat"><strong id="stat-total">—</strong><span>Total entries</span></div>
+          <div class="abstract-stat"><strong id="stat-poems">—</strong><span>Poems</span></div>
+          <div class="abstract-stat"><strong id="stat-artworks">—</strong><span>Artworks</span></div>
+          <div class="abstract-stat"><strong id="stat-audio">—</strong><span>Audios</span></div>
+          <div class="abstract-stat"><strong id="stat-videos">—</strong><span>Videos</span></div>
+        </div>
+
+        <nav class="abstract-quick-links" aria-label="The Abstract quick links">
+          <a
+            id="playlist-link"
+            class="quick-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          <img
+            class="spotify-logo"
+            src="https://cdn.simpleicons.org/spotify/FFFFFF"
+            alt=""
+            aria-hidden="true"
+          >
+
+            My Fav Songs
+
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="quick-link" href="#submit-to-abstract">Submit <span aria-hidden="true">↓</span></a>
+        </nav>
+      </header>
+
+      <!-- ========================= VIDEO ARCHIVE ========================= -->
+      <section class="abstract-video-section" aria-labelledby="video-section-title">
+        <div class="video-feature-layout">
+          <div class="video-frame" id="featured-video-frame">
+            <!-- Populated with thumbnail or YouTube iframe by JS. -->
+          </div>
+          <div class="video-description">
+            <div class="section-kicker" id="video-section-title">Latest video <span id="video-new"></span></div>
+            <h2 id="video-title">Video messages</h2>
+            <time class="entry-date" id="video-date"></time>
+            <p id="video-summary">The newest video appears here when you add it to videos.json.</p>
           </div>
         </div>
-      </article>
 
-      <article class="abstract-mini-panel">
-        <span class="panel-label">Current Fragment</span>
-        <p id="current-fragment" class="fragment-text"></p>
-      </article>
+        <div class="video-history-heading">
+          <h3>Previous messages</h3>
+          <span class="small-note">Select a video to watch above</span>
+        </div>
 
-    </section>
+        <div class="scroll-collection video-scroll-collection">
+          <button class="scroll-arrow" type="button" data-scroll="video-track" data-direction="-1" aria-label="Previous videos">‹</button>
+          <div class="video-track" id="video-track" tabindex="0" aria-label="Select a video from the archive"></div>
+          <button class="scroll-arrow" type="button" data-scroll="video-track" data-direction="1" aria-label="Next videos">›</button>
+        </div>
+      </section>
 
-    <section class="abstract-section video-section">
-      <div class="section-heading compact-heading">
-        <h2>Video Update</h2>
-        <p id="video-note-title"></p>
+      <!-- ========================= POEMS ========================= -->
+      <div class="abstract-two-column poetry-collections">
+        <section class="abstract-section archive-list-section" aria-labelledby="self-poems-heading">
+          <div class="section-heading">
+            <h2 id="self-poems-heading">Seth's Poems <span class="section-new" id="self-poems-new"></span></h2>
+            <span class="section-count" id="self-poems-count"></span>
+          </div>
+          <div class="archive-list" id="self-poems-list"></div>
+          <button class="see-more" id="self-poems-more" type="button" hidden>See more <span aria-hidden="true">⌄</span></button>
+        </section>
+
+        <section class="abstract-section archive-list-section" aria-labelledby="witness-poems-heading">
+          <div class="section-heading">
+            <h2 id="witness-poems-heading">Witness Poems <span class="section-new" id="witness-poems-new"></span></h2>
+            <span class="section-count" id="witness-poems-count"></span>
+          </div>
+          <div class="archive-list" id="witness-poems-list"></div>
+          <button class="see-more" id="witness-poems-more" type="button" hidden>See more <span aria-hidden="true">⌄</span></button>
+        </section>
       </div>
 
-      <div class="video-frame">
-        <iframe id="weekly-video" src="" title="Weekly video note" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </section>
+      <!-- ========================= AUDIO + THOUGHTS ========================= -->
+      <div class="abstract-two-column audio-thoughts-collections">
+        <section class="abstract-section archive-list-section" aria-labelledby="audio-heading">
+          <div class="section-heading">
+            <h2 id="audio-heading">Sound Archive <span class="section-new" id="audio-new"></span></h2>
+            <span class="section-count" id="audio-count"></span>
+          </div>
+          <div class="archive-list audio-list" id="audio-list"></div>
+          <button class="see-more" id="audio-more" type="button" hidden>See more <span aria-hidden="true">⌄</span></button>
+        </section>
 
-    <section class="abstract-section weekly-dispatch">
-      <div class="section-heading">
-        <h2>Weekly Dispatch</h2>
-        <p><em>Art from the current week. Some things may become public, some will be gone forever after a
-            week.</em></p>
-      </div>
-
-      <article id="weekly-post" class="weekly-post">
-        <!-- Injected by JS -->
-      </article>
-    </section>
-
-    <section class="abstract-section voices-section">
-      <div class="section-heading">
-        <h2>Voices from the Abstract</h2>
-        <p>Fragments submitted by witnesses. Submit your own at the bottom of this page.</p>
+        <section class="abstract-section archive-list-section" aria-labelledby="thoughts-heading">
+          <div class="section-heading">
+            <h2 id="thoughts-heading">Witness Thoughts <span class="section-new" id="thoughts-new"></span></h2>
+            <span class="section-count" id="thoughts-count"></span>
+          </div>
+          <p class="section-subtitle">Letters, questions, and responses from Seth.</p>
+          <div class="archive-list" id="thoughts-list"></div>
+          <button class="see-more" id="thoughts-more" type="button" hidden>See more <span aria-hidden="true">⌄</span></button>
+        </section>
       </div>
 
-      <div class="voices-grid">
-        <article>
-          <span class="voice-label">Thought from The Abstract</span>
-          <p id="community-thought"></p>
-        </article>
+      <!-- ========================= GALLERY ========================= -->
+      <section class="abstract-section gallery-section" aria-labelledby="gallery-heading">
+        <div class="section-heading">
+          <h2 id="gallery-heading">The Gallery <span class="section-new" id="gallery-new"></span></h2>
+          <span class="section-count" id="gallery-count"></span>
+        </div>
+        <div class="scroll-collection gallery-scroll-collection">
+          <button class="scroll-arrow" type="button" data-scroll="gallery-track" data-direction="-1" aria-label="Previous artwork">‹</button>
+          <div class="gallery-track" id="gallery-track" tabindex="0" aria-label="Gallery artworks"></div>
+          <button class="scroll-arrow" type="button" data-scroll="gallery-track" data-direction="1" aria-label="Next artworks">›</button>
+        </div>
+        <button class="gallery-toggle" type="button" id="gallery-toggle" hidden>Explore the gallery <span aria-hidden="true">⌄</span></button>
+        <div class="gallery-expanded" id="gallery-expanded" hidden></div>
+      </section>
 
-        <article>
-          <span class="voice-label">Poem from The Abstract</span>
-          <div id="community-poem" class="poem-block"></div>
-        </article>
+      <!-- ========================= SUBMISSION FORM ========================= -->
+      <section class="abstract-section submit-section" id="submit-to-abstract" aria-labelledby="submit-heading">
 
-        <article>
-          <span class="voice-label">Poem by Seth Abstract</span>
-          <div id="self-poem" class="poem-block"></div>
-        </article>
-      </div>
-    </section>
+  <div class="submit-heading">
+    <span class="submit-icon" aria-hidden="true">✉</span>
 
-    <section class="abstract-section submit-section">
-      <div class="section-heading">
-        <h2>Submit to the Abstract</h2>
-        <p>I read all submissions. Send your ideas, writing, questions, and opinions! They mean a lot. Some thoughts and
-          poems will be displayed.</p>
-      </div>
+    <div>
+      <h2 id="submit-heading">Submit to The Abstract</h2>
+      <p>
+        I read all submissions. Share your poems, thoughts, questions,
+        feedback, and ideas. Some may be featured here.
+      </p>
+    </div>
+  </div>
 
-      <form id="abstract-submit-form">
-        <label>
-          Submission Type
-          <select name="type" required>
-            <option value="">Choose one</option>
-            <option value="feedback">Feedback</option>
-            <option value="thought">Thought</option>
-            <option value="poem">Poem</option>
-            <option value="artwork">Question</option>
-            <option value="song idea">Idea</option>
-          </select>
-        </label>
+  <form id="abstract-submit-form">
 
-        <label>
-          Your Submission
-          <textarea name="message" rows="7" required></textarea>
-        </label>
+    <!-- LEFT COLUMN -->
+    <div class="form-column">
 
-        <button type="submit">Send to the Archive</button>
-      </form>
-    </section>
+      <label for="submission-type">Submission type</label>
+      <select id="submission-type" name="type" required>
+        <option value="">Choose one</option>
+        <option value="poem">Poem</option>
+        <option value="thought">Thought / Question</option>
+        <option value="feedback">Feedback</option>
+        <option value="other">Other</option>
+      </select>
 
-    <footer class="abstract-footer">
-      <p>Updated Sundays. The Abstract grows.</p>
-    </footer>
+      <label for="submission-email">
+        Email <span>(optional)</span>
+      </label>
+      <input
+        id="submission-email"
+        name="email"
+        type="email"
+        maxlength="200"
+        autocomplete="email"
+        placeholder="Only if you'd like a reply"
+      >
 
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="form-column form-message-column">
+
+      <label for="submission-message">Your submission</label>
+      <textarea
+        id="submission-message"
+        name="message"
+        rows="10"
+        maxlength="12000"
+        required
+        placeholder="Write your submission here..."
+      ></textarea>
+
+    </div>
+
+    <!-- BOTTOM ROW -->
+    <div class="form-actions">
+      <p>
+        Submissions are reviewed before appearing in the archive.
+        Share only writing you have permission to send.
+      </p>
+
+      <button type="submit" id="submission-button">
+        Send to the Archive <span aria-hidden="true">→</span>
+      </button>
+    </div>
+
+    <p id="submission-status" role="status" aria-live="polite"></p>
+
+  </form>
+
+</section>
+
+      <!-- ========================= FOOTER ========================= -->
+      <footer class="abstract-footer">
+        <p>The Abstract grows.</p>
+        <a href="#top">Back to top ↑</a>
+      </footer>
+
+    </div>
   </main>
 
-  <!-- ========================= FOOTER ========================= -->
+  <!-- ========================= READING / ART OVERLAY ========================= -->
+  <dialog class="abstract-modal" id="archive-modal" aria-labelledby="modal-title">
+    <div class="modal-topline">
+      <span id="modal-category" class="panel-label"></span>
+      <button type="button" class="modal-close" id="modal-close" aria-label="Close overlay">×</button>
+    </div>
+    <div class="modal-scroll" id="modal-scroll">
+      <h2 id="modal-title"></h2>
+      <p class="modal-byline" id="modal-byline"></p>
+      <div id="modal-content" class="modal-content"></div>
+    </div>
+  </dialog>
+
+  <!-- ========================= FOOTER INCLUDE ========================= -->
   <div id="site-footer"></div>
 
   <!-- ========================= SCRIPTS ========================= -->
-  <script src="/js/includes.js"></script>
-  <script src="/js/global.js"></script>
-  <script src="/js/intheabstract.js"></script>
-  <script src="/js/intheabstractposts.js"></script>
+  <!-- These two are already present on your live site. -->
+  <script src="/js/includes.js" defer></script>
+  <script src="/js/global.js" defer></script>
+  <!-- All archive collections are loaded from /data/*.json by this file. -->
+  <script src="/js/intheabstract.js" defer></script>
 
 </body>
-
 </html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Seth Abstract</title>
+<link rel="icon" type="image/jpeg" href="/global_assets/web_icon.jpg">
+
+  <!-- ========================= TRACKING ========================= -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N8HF9STP');</script>
+
+  <!-- ========================= FONTS ========================= -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap"
+    rel="stylesheet">
+
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/ugg8kvv.css">
+
+  <!-- ========================= STYLES ========================= -->
+  <!-- Global Design System -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/layout.css">
+
+  <!-- Page-Specific Styles -->
+  <link rel="stylesheet" href="/css/intheabstract.css">
+
+</head>
+
+<body data-active-page>
+
+  <!-- ========================= NAVIGATION ========================= -->
+  <div id="site-header"></div>
+
+  <!-- ========================= MAIN CONTENT ========================= -->
+  <main class="abstract-page">
+
+    <section class="abstract-hero">
+      <h1>THE ABSTRACT</h1>
+
+      <p class="abstract-intro">
+        You found your way here. This page updates every Sunday with notes,
+        fragments, songs, and voices from the hidden side of The Abstract.
+        Please do not share the direct link. Others should find the key themselves.
+      </p>
+    </section>
+
+    <section class="abstract-panel-grid">
+
+      <article class="abstract-mini-panel">
+        <span class="panel-label">Archive Status</span>
+        <p><strong>Witnesses:</strong> <span id="witness-count"></span></p>
+        <p><strong>Week:</strong> <span id="archive-week"></span></p>
+        <p><strong>Updated:</strong> <span id="archive-updated"></span></p>
+      </article>
+
+      <article class="abstract-mini-panel">
+        <span class="panel-label">Current Listening</span>
+        <div class="listening-card">
+          <img id="song-cover" src="" alt="Album cover">
+          <div>
+            <h2 id="song-title"></h2>
+            <p id="song-artist"></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="abstract-mini-panel">
+        <span class="panel-label">Current Fragment</span>
+        <p id="current-fragment" class="fragment-text"></p>
+      </article>
+
+    </section>
+
+    <section class="abstract-section video-section">
+      <div class="section-heading compact-heading">
+        <h2>Video Update</h2>
+        <p id="video-note-title"></p>
+      </div>
+
+      <div class="video-frame">
+        <iframe id="weekly-video" src="" title="Weekly video note" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="abstract-section weekly-dispatch">
+      <div class="section-heading">
+        <h2>Weekly Dispatch</h2>
+        <p><em>Art from the current week. Some things may become public, some will be gone forever after a
+            week.</em></p>
+      </div>
+
+      <article id="weekly-post" class="weekly-post">
+        <!-- Injected by JS -->
+      </article>
+    </section>
+
+    <section class="abstract-section voices-section">
+      <div class="section-heading">
+        <h2>Voices from the Abstract</h2>
+        <p>Fragments submitted by witnesses. Submit your own at the bottom of this page.</p>
+      </div>
+
+      <div class="voices-grid">
+        <article>
+          <span class="voice-label">Thought from The Abstract</span>
+          <p id="community-thought"></p>
+        </article>
+
+        <article>
+          <span class="voice-label">Poem from The Abstract</span>
+          <div id="community-poem" class="poem-block"></div>
+        </article>
+
+        <article>
+          <span class="voice-label">Poem by Seth Abstract</span>
+          <div id="self-poem" class="poem-block"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="abstract-section submit-section">
+      <div class="section-heading">
+        <h2>Submit to the Abstract</h2>
+        <p>I read all submissions. Send your ideas, writing, questions, and opinions! They mean a lot. Some thoughts and
+          poems will be displayed.</p>
+      </div>
+
+      <form id="abstract-submit-form">
+        <label>
+          Submission Type
+          <select name="type" required>
+            <option value="">Choose one</option>
+            <option value="feedback">Feedback</option>
+            <option value="thought">Thought</option>
+            <option value="poem">Poem</option>
+            <option value="artwork">Question</option>
+            <option value="song idea">Idea</option>
+          </select>
+        </label>
+
+        <label>
+          Your Submission
+          <textarea name="message" rows="7" required></textarea>
+        </label>
+
+        <button type="submit">Send to the Archive</button>
+      </form>
+    </section>
+
+    <footer class="abstract-footer">
+      <p>Updated Sundays. The Abstract grows.</p>
+    </footer>
+
+  </main>
+
+  <!-- ========================= FOOTER ========================= -->
+  <div id="site-footer"></div>
+
+  <!-- ========================= SCRIPTS ========================= -->
+  <script src="/js/includes.js"></script>
+  <script src="/js/global.js"></script>
+  <script src="/js/intheabstract.js"></script>
+  <script src="/js/intheabstractposts.js"></script>
+
+</body>
+
+</html>

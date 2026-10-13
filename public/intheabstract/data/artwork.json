@@ -1,0 +1,22 @@
+[
+  {
+    "id": "artwork-001-01",
+    "title": "Snail Drawing",
+    "publishAt": "2026-05-29T12:00:00Z",
+    "published": true,
+    "artist": "Seth Abstract",
+    "image": "/intheabstract/images/snail_drawing.jpg",
+    "alt": "Snail Drawing",
+    "description": "Random drawing haha"
+  },
+  {
+    "id": "artwork-004-01",
+    "title": "The CRASH — Cover Art",
+    "publishAt": "2026-06-21T12:00:00Z",
+    "published": true,
+    "artist": "Seth Abstract",
+    "image": "/intheabstract/images/The_CRASH_cover.jpg",
+    "alt": "The CRASH Cover",
+    "description": "It is made up of images of me and my amazing girlfriend."
+  }
+]
