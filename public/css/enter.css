@@ -444,6 +444,210 @@ body.enter-page {
   filter: grayscale(1);
 }
 
+/* ========================= THE LIVING ARCHIVE ========================= */
+
+.archive-feature {
+  position: relative;
+  padding: 18px 10px 14px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  text-align: center;
+}
+
+.archive-feature-heading {
+  margin-bottom: 14px;
+}
+
+.archive-feature-heading h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 8vw, 2.25rem);
+  line-height: 1;
+}
+
+.archive-feature-heading > p:last-child {
+  margin-top: 5px;
+
+  font-size: 0.72rem;
+  line-height: 1.35;
+
+  opacity: 0.62;
+}
+
+.archive-poet-stage {
+  display: grid;
+  grid-template-columns: 1fr 130px 1fr;
+
+  gap: 9px;
+  align-items: center;
+
+  width: 100%;
+  min-height: 138px;
+}
+
+.archive-cover-link {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
+  width: 130px;
+  height: 130px;
+
+  margin: 0 auto;
+
+  transition: transform var(--transition-fast);
+}
+
+.archive-cover-link:hover {
+  transform: scale(1.025);
+}
+
+.archive-feature-cover {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 14px 32px rgba(18, 7, 16, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.archive-poets {
+  position: relative;
+
+  height: 72px;
+  min-width: 0;
+}
+
+.poet-name {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+
+  font-family: var(--font-header);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.25;
+
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  opacity: 0;
+
+  animation: archivePoetFade 9s infinite;
+}
+
+.archive-poets-left .poet-name {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.archive-poets-right .poet-name {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.poet-1 {
+  animation-delay: 0s;
+}
+
+.poet-2 {
+  animation-delay: 3s;
+}
+
+.poet-3 {
+  animation-delay: 6s;
+}
+
+@keyframes archivePoetFade {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  10% {
+    opacity: 0.72;
+    transform: translateY(0);
+  }
+
+  28% {
+    opacity: 0.72;
+    transform: translateY(0);
+  }
+
+  38% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+.archive-platforms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 6px;
+
+  margin-top: 13px;
+}
+
+.archive-platform {
+  min-width: 0;
+  min-height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 5px 7px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  font-family: var(--font-header);
+  font-size: 0.67rem;
+  font-weight: 700;
+
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.archive-platform img {
+  width: 22px;
+  height: 22px;
+
+  flex: 0 0 auto;
+
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.archive-platform:hover {
+  transform: translateY(-1px);
+
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 /* ========================= ALBUM-COVER ART PRINTS ========================= */
 
 .prints-section {
@@ -769,6 +973,30 @@ body.enter-page {
     display: none;  
   }
 
+  .archive-poet-stage {
+  grid-template-columns: 1fr 112px 1fr;
+  gap: 6px;
+}
+
+.archive-cover-link {
+  width: 112px;
+  height: 112px;
+}
+
+.poet-name {
+  font-size: 0.62rem;
+}
+
+.archive-platform {
+  padding-inline: 4px;
+  font-size: 0.61rem;
+}
+
+.archive-platform img {
+  width: 19px;
+  height: 19px;
+}
+
   .print-track {
     gap: 11px;
   }
@@ -818,5 +1046,26 @@ body.enter-page {
   .print-card {
     transition: none !important;
   }
+
+  .poet-name,
+.archive-cover-link,
+.archive-platform {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poet-name {
+    animation: none;
+  }
+
+  .poet-name:not(.poet-1) {
+    display: none;
+  }
+
+  .poet-1 {
+    opacity: 0.72;
+    transform: none;
+  }
+}
 
 }
